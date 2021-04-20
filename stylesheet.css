@@ -46,6 +46,29 @@
     background-size: cover;
 }
 
+#game_middleground {
+    background-image: url(svg/mellomgrund.svg);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    z-index: 1;
+
+}
+
+#game_foreground {
+    background-image: url(svg/forgrund.svg);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    z-index: 3;
+}
+
 #game_elements {
     height: 100%;
     width: 100%;
@@ -56,8 +79,8 @@
 
 #figur1_container {
     position: absolute;
-    top: 35vw;
-    left: 65vw;
+    top: 24vw;
+    left: 33vw;
 }
 
 
@@ -98,16 +121,16 @@
 
 #figur4_container {
     position: absolute;
-    top: 16vw;
-    left: 88vw;
+    top: 26vw;
+    left: 87vw;
 }
 
 
 #figur4_sprite {
     background-image: url(svg/figur_4.svg);
     background-size: cover;
-    height: 8vw;
-    width: 9vw;
+    height: 10.3vw;
+    width: 9.1vw;
 }
 
 #figur5_container {
@@ -124,26 +147,6 @@
     width: 8vw;
 }
 
-#game_middleground {
-    background-image: url(svg/mellomgrund.svg);
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-size: cover;
-
-}
-
-#game_foreground {
-    background-image: url(svg/forgrund.svg);
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-size: cover;
-}
 
 #game_ui {
     height: 100%;
@@ -151,6 +154,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 100;
 }
 
 #time_board {
@@ -214,4 +218,29 @@
     background-size: cover;
     height: 6.5vw;
     width: 7.8vw;
+}
+
+
+.jump {
+    animation-name: jump_kf;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+
+}
+
+@keyframes jump_kf {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-10vw);
+    }
+}
+
+
+.pause {
+    animation-play-state: paused;
 }
