@@ -1,0 +1,146 @@
+#screen {
+    position: relative;
+    width: 100vw;
+    height: 56.25vw;
+}
+
+#start {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    background-image: url(svg/titelskaerm.svg)
+}
+
+#game_over {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(svg/game_over.svg);
+    display: none;
+
+}
+
+#level_complete {
+    height: 100%;
+    width: 100%;
+    background-image: url(svg/next_level.svg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+
+}
+
+#game_backround {
+    background-image: url(svg/baggrund.svg);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+}
+
+#game_elements {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#figur1_container {
+    position: absolute;
+    top: 35vw;
+    left: 65vw;
+}
+
+
+#figur1_sprite {
+    background-image: url(svg/figur_1.svg);
+    background-size: cover;
+    height: 9vw;
+    width: 7vw;
+}
+
+#figur2_container {
+    position: absolute;
+    top: 12vw;
+    left: 24vw;
+}
+
+
+#figur2_sprite {
+    background-image: url(svg/figur_2.svg);
+    background-size: cover;
+    height: 11vw;
+    width: 7vw;
+}
+
+#figur3_container {
+    position: absolute;
+    top: 40vw;
+    left: 24vw;
+}
+
+
+#figur3_sprite {
+    background-image: url(svg/figur_3.svg);
+    background-size: cover;
+    height: 12vw;
+    width: 9vw;
+}
+
+#figur4_container {
+    position: absolute;
+    top: 16vw;
+    left: 88vw;
+}
+
+
+#figur4_sprite {
+    background-image: url(svg/figur_4.svg);
+    background-size: cover;
+    height: 8vw;
+    width: 9vw;
+}
+
+#figur5_container {
+    position: absolute;
+    top: 34vw;
+    left: 76vw;
+}
+
+
+#figur5_sprite {
+    background-image: url(svg/figur_5.svg);
+    background-size: cover;
+    height: 10vw;
+    width: 8vw;
+}
+
+#game_middleground {
+    background-image: url(svg/mellomgrund.svg);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+
+}
+
+#game_foreground {
+    background-image: url(svg/forgrund.svg);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+}
