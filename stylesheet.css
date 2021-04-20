@@ -162,12 +162,6 @@
 
 }
 
-#time_star_container {
-    position: absolute;
-    bottom: 50vw;
-    right: 50vw;
-}
-
 
 #time_star_sprite {
     background-image: url(svg/stjerne_gul_3.svg);
@@ -175,4 +169,49 @@
     height: 12vw;
     width: 12vw;
 
+}
+
+#energy_board {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0vw;
+    left: 0vw;
+}
+
+#heart_1_container {
+    position: absolute;
+    top: 34vw;
+    left: 76vw;
+}
+
+#heart_1_sprite {
+    background-image: url(svg/hjerte_rosa.svg);
+    background-size: cover;
+    height: 6.5vw;
+    width: 7.8vw;
+}
+
+
+#heart_2_container {
+    position: absolute;
+}
+
+#heart_2_sprite {
+    background-image: url(svg/hjerte_rosa.svg);
+    background-size: cover;
+    height: 6.5vw;
+    width: 7.8vw;
+}
+
+
+#heart_3_container {
+    position: absolute;
+}
+
+#heart_3_sprite {
+    background-image: url(svg/hjerte_rosa.svg);
+    background-size: cover;
+    height: 6.5vw;
+    width: 7.8vw;
 }
