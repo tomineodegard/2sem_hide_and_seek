@@ -144,3 +144,35 @@
     left: 0;
     background-size: cover;
 }
+
+#game_ui {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#time_board {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 40vw;
+    left: 80vw;
+
+}
+
+#time_star_container {
+    position: absolute;
+    bottom: 50vw;
+    right: 50vw;
+}
+
+
+#time_star_sprite {
+    background-image: url(svg/stjerne_gul_3.svg);
+    background-size: cover;
+    height: 12vw;
+    width: 12vw;
+
+}
