@@ -2,16 +2,26 @@ window.addEventListener("load", showPage);
 
 function showPage() {
     console.log("show page");
+    document.querySelector("#figur1_container").addEventListener("mousedown", clickFigur1Handler);
+    document.querySelector("#figur4_container").addEventListener("mousedown", clickFigur4Handler);
 
 }
 
-document.querySelector("#figur1_container").addEventListener("click", clickFigur1Handler);
 
 function clickFigur1Handler() {
     console.log("clickFigur1Handler");
-    document.querySelector("#figur1_container").classList.add("pause");
-    document.querySelector("#figur1_container").classList.add("rotate_after_click");
+    document.querySelector("#figur1_container").removeEventListener("mousedown", clickFigur1Handler);
 
+    document.querySelector("#figur1_container").classList.add("pause");
+    document.querySelector("#figur1_sprite").classList.add("click_bad");
+}
+
+function clickFigur4Handler() {
+    console.log("clickFigur4Handler");
+    document.querySelector("#figur4_container").removeEventListener("mousedown", clickFigur4Handler);
+
+    document.querySelector("#figur4_container").classList.add("pause");
+    document.querySelector("#figur4_sprite").classList.add("click_good");
 }
 
 

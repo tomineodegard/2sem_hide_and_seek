@@ -245,19 +245,78 @@
     }
 }
 
-.rotate_after_click {
-    animation-name: rotate_after_click_kf;
+.click_good {
+    animation-name: click_good_kf;
     animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 
 }
 
-@keyframes rotate_after_click_kf {
+@keyframes click_good_kf {
     0% {
         transform: rotateY(360deg);
     }
 }
+
+.click_bad {
+    animation-name: click_bad_kf;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+    transition-timing-function: ease-in-out;
+}
+
+@keyframes click_bad_kf {
+
+
+    25% {
+        transform: scale(1.2) rotate(25deg);
+    }
+
+    50% {
+        transform: scale(1.4) rotate(-25deg);
+    }
+
+    50% {
+        transform: scale(1.6) rotate(45deg);
+    }
+
+    75% {
+        transform: scale(1.4) rotate(-45deg);
+    }
+
+    100% {
+        transform: scale(1.3) translateY(50.5vw) rotateY(360deg);
+    }
+}
+
+.click_good {
+    animation-name: click_good_kf;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+
+@keyframes click_good_kf {
+    0% {
+        filter: drop-shadow(0px 0px 0px white);
+
+    }
+
+    50% {
+        transform: scale(1.4);
+    }
+
+    100% {
+        filter: drop-shadow(5px 5px 20px white);
+        transform: scale(1.2) translateY(-50.5vw);
+    }
+}
+
 
 
 .pause {
