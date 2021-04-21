@@ -2,12 +2,13 @@ window.addEventListener("load", showPage);
 
 function showPage() {
     console.log("show page");
-    /*document.querySelector("figur1_container").classList.add("pos1"); */
 
     document.querySelector("#figur1_container").addEventListener("mousedown", clickFigur1Handler);
     document.querySelector("#figur4_container").addEventListener("mousedown", clickFigur4Handler);
 
 }
+
+
 
 
 function clickFigur1Handler() {
@@ -16,19 +17,11 @@ function clickFigur1Handler() {
 
     document.querySelector("#figur1_container").classList.add("pause");
     document.querySelector("#figur1_sprite").classList.add("click_bad");
+    document.querySelector("#figur1_sprite").addEventListener("animationend", figur1Reset);
+
 }
 
-function clickFigur4Handler() {
-    console.log("clickFigur4Handler");
-    document.querySelector("#figur4_container").removeEventListener("mousedown", clickFigur4Handler);
-
-    document.querySelector("#figur4_container").classList.add("pause");
-    document.querySelector("#figur4_sprite").classList.add("click_good");
-}
-
-
-
-/*function figur1Reset() {
+function figur1Reset() {
     console.log("figur1Reset");
     document.querySelector("#figur1_container").classList = "";
     document.querySelector("#figur1_sprite").classList = "";
@@ -36,44 +29,34 @@ function clickFigur4Handler() {
 
     document.querySelector("#figur1_container").offsetHeight;
     document.querySelector("#figur1_container").classList.add("pos2");
-    document.querySelector("#figur1_container").classList.add("click_bad");
+    document.querySelector("#figur1_container").classList.add("jump");
     document.querySelector("#figur1_container").addEventListener("mousedown", clickFigur1Handler);
 }
 
-*/
+
+
+/************************************************/
 
 
 
-/* window.addEventListener("load", sidenVises);
+function clickFigur4Handler() {
+    console.log("clickFigur4Handler");
+    document.querySelector("#figur4_container").removeEventListener("mousedown", clickFigur4Handler);
 
-function sidenVises() {
-    console.log("siden vises");
-
-
-    document.querySelector("#red_container").classList.add("pos1");
-    document.querySelector("#red_container").classList.add("flyv");
-    document.querySelector("#red_container").addEventListener("mousedown", clickRedHandler);
+    document.querySelector("#figur4_container").classList.add("pause");
+    document.querySelector("#figur4_sprite").classList.add("click_good");
+    document.querySelector("#figur4_sprite").addEventListener("animationend", figur4Reset);
 
 }
 
-function clickRedHandler() {
-    console.log("clickRedHandler");
-    document.querySelector("#red_container").removeEventListener("mousedown", clickRedHandler);
-    document.querySelector("#red_container").classList.add("frys");
-    document.querySelector("#red_sprite").classList.add("forsvind");
-    document.querySelector("#red_container").addEventListener("animationend", redReset);
+function figur4Reset() {
+    console.log("figur4Reset");
+    document.querySelector("#figur4_container").classList = "";
+    document.querySelector("#figur4_sprite").classList = "";
+    document.querySelector("#figur4_container").removeEventListener("animationend", figur4Reset)
+
+    document.querySelector("#figur4_container").offsetHeight;
+    document.querySelector("#figur4_container").classList.add("pos2");
+    document.querySelector("#figur4_container").classList.add("jump");
+    document.querySelector("#figur4_container").addEventListener("mousedown", clickFigur4Handler);
 }
-
-function redReset() {
-    console.log("redReset");
-    document.querySelector("#red_container").classList = "";
-    document.querySelector("#red_sprite").classList = "";
-    document.querySelector("#red_container").removeEventListener("animationend", redReset)
-
-    document.querySelector("#red_container").offsetLeft;
-    document.querySelector("#red_container").classList.add("pos2");
-    document.querySelector("#red_container").classList.add("flyv");
-    document.querySelector("#red_container").addEventListener("mousedown", clickRedHandler);
-}
-
-*/
