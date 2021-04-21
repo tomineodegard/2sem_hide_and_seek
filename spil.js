@@ -3,6 +3,11 @@ window.addEventListener("load", showPage);
 function showPage() {
     console.log("show page");
 
+    document.querySelector("#figur1_container").classList.add("pos1_figur1");
+    document.querySelector("#figur4_container").classList.add("pos1_figur4");
+    document.querySelector("#figur1_container").classList.add("jump");
+    document.querySelector("#figur4_container").classList.add("jump");
+
     document.querySelector("#figur1_container").addEventListener("mousedown", clickFigur1Handler);
     document.querySelector("#figur4_container").addEventListener("mousedown", clickFigur4Handler);
 
@@ -28,7 +33,7 @@ function figur1Reset() {
     document.querySelector("#figur1_container").removeEventListener("animationend", figur1Reset)
 
     document.querySelector("#figur1_container").offsetHeight;
-    document.querySelector("#figur1_container").classList.add("pos2");
+    document.querySelector("#figur1_container").classList.add("pos2_figur1");
     document.querySelector("#figur1_container").classList.add("jump");
     document.querySelector("#figur1_container").addEventListener("mousedown", clickFigur1Handler);
 }
@@ -56,7 +61,7 @@ function figur4Reset() {
     document.querySelector("#figur4_container").removeEventListener("animationend", figur4Reset)
 
     document.querySelector("#figur4_container").offsetHeight;
-    document.querySelector("#figur4_container").classList.add("pos2");
+    document.querySelector("#figur4_container").classList.add("pos2_figur4");
     document.querySelector("#figur4_container").classList.add("jump");
     document.querySelector("#figur4_container").addEventListener("mousedown", clickFigur4Handler);
 }
