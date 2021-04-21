@@ -2,6 +2,7 @@
     position: relative;
     width: 100vw;
     height: 56.25vw;
+    overflow: hidden;
 }
 
 #start {
@@ -54,7 +55,7 @@
     top: 0;
     left: 0;
     background-size: cover;
-    z-index: 1;
+
 
 }
 
@@ -66,7 +67,7 @@
     top: 0;
     left: 0;
     background-size: cover;
-    z-index: 3;
+
 }
 
 #game_elements {
@@ -154,7 +155,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 100;
+    pointer-events: none;
 }
 
 #time_board {
@@ -168,9 +169,9 @@
 
 
 #time_star_sprite {
-    background-image: url(svg/stjerne_gul_3.svg);
+    background-image: url(svg/stjerne_gul_4.svg);
     background-size: cover;
-    height: 12vw;
+    height: 12.3vw;
     width: 12vw;
 
 }
@@ -185,39 +186,43 @@
 
 #heart_1_container {
     position: absolute;
-    top: 34vw;
-    left: 76vw;
+    top: 2vw;
+    left: 4vw;
 }
 
 #heart_1_sprite {
     background-image: url(svg/hjerte_rosa.svg);
     background-size: cover;
-    height: 6.5vw;
-    width: 7.8vw;
+    height: 5.5vw;
+    width: 6.6vw;
 }
 
 
 #heart_2_container {
     position: absolute;
+    top: 2vw;
+    left: 12vw;
 }
 
 #heart_2_sprite {
     background-image: url(svg/hjerte_rosa.svg);
     background-size: cover;
-    height: 6.5vw;
-    width: 7.8vw;
+    height: 5.5vw;
+    width: 6.6vw;
 }
 
 
 #heart_3_container {
     position: absolute;
+    top: 2vw;
+    left: 20vw;
 }
 
 #heart_3_sprite {
     background-image: url(svg/hjerte_rosa.svg);
     background-size: cover;
-    height: 6.5vw;
-    width: 7.8vw;
+    height: 5.5vw;
+    width: 6.6vw;
 }
 
 
@@ -237,6 +242,20 @@
 
     100% {
         transform: translateY(-10vw);
+    }
+}
+
+.rotate_after_click {
+    animation-name: rotate_after_click_kf;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+
+@keyframes rotate_after_click_kf {
+    0% {
+        transform: rotateY(360deg);
     }
 }
 

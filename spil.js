@@ -3,18 +3,15 @@ window.addEventListener("load", showPage);
 function showPage() {
     console.log("show page");
 
-    document.querySelector("#figur1_container").classList.add("jump");
-    document.querySelector("#figur1_container").addEventListener("mousedown", clickFigur1Handler);
-
 }
 
+document.querySelector("#figur1_container").addEventListener("click", clickFigur1Handler);
 
 function clickFigur1Handler() {
     console.log("clickFigur1Handler");
-    document.querySelector("#figur1_container").removeEventListener("mousedown", clickFigur1Handler);
     document.querySelector("#figur1_container").classList.add("pause");
-
     document.querySelector("#figur1_container").classList.add("rotate_after_click");
+
 }
 
 
