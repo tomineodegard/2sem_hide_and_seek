@@ -55,6 +55,7 @@
     top: 0;
     left: 0;
     background-size: cover;
+    pointer-events: none;
 
 
 }
@@ -67,6 +68,7 @@
     top: 0;
     left: 0;
     background-size: cover;
+    pointer-events: none;
 
 }
 
@@ -321,4 +323,14 @@
 
 .pause {
     animation-play-state: paused;
+}
+
+.pos1 {
+    top: 14vw;
+    left: 33vw;
+}
+
+.pos2 {
+    top: 20vw;
+    left: 65vw;
 }

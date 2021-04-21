@@ -2,6 +2,8 @@ window.addEventListener("load", showPage);
 
 function showPage() {
     console.log("show page");
+    /*document.querySelector("figur1_container").classList.add("pos1"); */
+
     document.querySelector("#figur1_container").addEventListener("mousedown", clickFigur1Handler);
     document.querySelector("#figur4_container").addEventListener("mousedown", clickFigur4Handler);
 
@@ -23,6 +25,22 @@ function clickFigur4Handler() {
     document.querySelector("#figur4_container").classList.add("pause");
     document.querySelector("#figur4_sprite").classList.add("click_good");
 }
+
+
+
+/*function figur1Reset() {
+    console.log("figur1Reset");
+    document.querySelector("#figur1_container").classList = "";
+    document.querySelector("#figur1_sprite").classList = "";
+    document.querySelector("#figur1_container").removeEventListener("animationend", figur1Reset)
+
+    document.querySelector("#figur1_container").offsetHeight;
+    document.querySelector("#figur1_container").classList.add("pos2");
+    document.querySelector("#figur1_container").classList.add("click_bad");
+    document.querySelector("#figur1_container").addEventListener("mousedown", clickFigur1Handler);
+}
+
+*/
 
 
 
