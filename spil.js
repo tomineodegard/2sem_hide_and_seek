@@ -19,6 +19,10 @@ function startGame() {
     console.log("startGame");
     document.querySelector("#start").classList.add("hidden");
 
+    points = 0;
+    document.querySelector("#score_board").innerHTML = points;
+
+
 
     life = 3;
 
@@ -56,9 +60,9 @@ function clickFigur1Handler() {
 
 
     // loose life by clicking figur1
-    console.log("Life = " + life)
-    document.querySelector("#heart" + life).classList.add("loose_life");
-    console.log("Liv er = " + life)
+    console.log("Life = " + life);
+    document.querySelector("#heart" + life).classList.add("hidden");
+    console.log("Liv er = " + life);
 
     life -= 1;
 
@@ -92,6 +96,12 @@ function clickFigur4Handler() {
     document.querySelector("#figur4_container").classList.add("pause");
     document.querySelector("#figur4_sprite").classList.add("click_good");
     document.querySelector("#figur4_sprite").addEventListener("animationend", figur4Reset);
+
+
+    points += 1;
+    document.querySelector("#score_board").innerHTML = points;
+
+
 
 }
 

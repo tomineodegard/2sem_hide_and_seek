@@ -193,8 +193,6 @@
 }
 
 #time_board {
-    height: 100%;
-    width: 100%;
     position: absolute;
     top: 40vw;
     left: 80vw;
@@ -211,16 +209,25 @@
 }
 
 #energy_board {
-
     position: absolute;
-    top: 0vw;
-    left: 0vw;
+    top: 2vw;
+    left: 2vw;
+    display: flex;
+
 }
 
 #energy_board img {
     height: 5.5vw;
     width: 6.6vw;
     background-size: cover;
+}
+
+
+
+#score_board {
+    font-size: 10rem;
+    top: 2vw;
+    right: 2vw;
 }
 
 
