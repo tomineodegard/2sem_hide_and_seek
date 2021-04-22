@@ -11,8 +11,23 @@
     position: absolute;
     top: 0;
     left: 0;
-    display: none;
-    background-image: url(svg/titelskaerm.svg)
+    background-image: url(svg/titelskaerm.svg);
+    background-size: cover;
+
+}
+
+
+#play {
+    position: absolute;
+    width: 12vw;
+    height: 13vw;
+    background-image: url(svg/play_btn%20copy.svg);
+    background-size: cover;
+    left: 79vw;
+    top: 33vw;
+
+    cursor: pointer;
+
 }
 
 #game_over {
@@ -196,53 +211,18 @@
 }
 
 #energy_board {
-    height: 100%;
-    width: 100%;
+
     position: absolute;
     top: 0vw;
     left: 0vw;
 }
 
-#heart_1_container {
-    position: absolute;
-    top: 2vw;
-    left: 4vw;
-}
-
-#heart_1_sprite {
-    background-image: url(svg/hjerte_rosa.svg);
-    background-size: cover;
+#energy_board img {
     height: 5.5vw;
     width: 6.6vw;
-}
-
-
-#heart_2_container {
-    position: absolute;
-    top: 2vw;
-    left: 12vw;
-}
-
-#heart_2_sprite {
-    background-image: url(svg/hjerte_rosa.svg);
     background-size: cover;
-    height: 5.5vw;
-    width: 6.6vw;
 }
 
-
-#heart_3_container {
-    position: absolute;
-    top: 2vw;
-    left: 20vw;
-}
-
-#heart_3_sprite {
-    background-image: url(svg/hjerte_rosa.svg);
-    background-size: cover;
-    height: 5.5vw;
-    width: 6.6vw;
-}
 
 
 .jump {
@@ -340,4 +320,8 @@
 
 .pause {
     animation-play-state: paused;
+}
+
+.hidden {
+    display: none;
 }
