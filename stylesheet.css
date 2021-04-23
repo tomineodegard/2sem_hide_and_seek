@@ -95,6 +95,26 @@
     left: 0;
 }
 
+.pos1 {
+    top: 14vw;
+    left: 33vw;
+}
+
+.pos2 {
+    top: 13vw;
+    left: 50vw;
+}
+
+.pos3 {
+    top: 25vw;
+    left: 87vw;
+}
+
+.pos4 {
+    top: 45vw;
+    left: 10vw;
+}
+
 #figur1_container {
     position: absolute;
 }
@@ -105,16 +125,6 @@
     background-size: cover;
     height: 9vw;
     width: 7vw;
-}
-
-.pos1_figur1 {
-    top: 14vw;
-    left: 33vw;
-}
-
-.pos2_figur1 {
-    top: 13vw;
-    left: 50vw;
 }
 
 #figur2_container {
@@ -157,15 +167,6 @@
     width: 9.1vw;
 }
 
-.pos1_figur4 {
-    top: 25vw;
-    left: 87vw;
-}
-
-.pos2_figur4 {
-    top: 45vw;
-    left: 10vw;
-}
 
 #figur5_container {
     position: absolute;
@@ -228,13 +229,15 @@
     font-size: 10rem;
     top: 2vw;
     right: 2vw;
+    position: absolute;
+
 }
 
 
 
 .jump {
     animation-name: jump_kf;
-    animation-duration: 1s;
+    animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     animation-direction: alternate;
@@ -246,8 +249,14 @@
         transform: translateY(0);
     }
 
-    100% {
+    50% {
         transform: translateY(-10vw);
+
+    }
+
+    100% {
+        transform: translateY(5vw) scale(0.5);
+
     }
 }
 

@@ -1,16 +1,13 @@
+let myRand;
 let points;
 let life;
 
 
-//page loads
 window.addEventListener("load", showPage);
 
-//page shows
 function showPage() {
     console.log("show page");
     document.querySelector("#play").addEventListener("click", startGame);
-
-
 }
 
 
@@ -22,25 +19,39 @@ function startGame() {
     points = 0;
     document.querySelector("#score_board").innerHTML = points;
 
-
-
     life = 3;
 
-    // gives the first position to the game elements
-    document.querySelector("#figur1_container").classList.add("pos1_figur1");
-    document.querySelector("#figur4_container").classList.add("pos1_figur4");
+
+    // GIVES A RANDOM POSITION - NOTE! HAVE A LOOK AT NEXT POINT WITH + myRand!
+    myRand = Math.floor(Math.random() * 4) + 1;
+    console.log(myRand);
 
 
+    // gives a random position to figur4
+    document.querySelector("#figur1_container").classList.add("pos" + myRand);
     // animation jump begins
     document.querySelector("#figur1_container").classList.add("jump");
-    document.querySelector("#figur4_container").classList.add("jump");
-
-
+    // listening for a the animation-end, and directs to the the reset
+    document.querySelector("#figur1_container").addEventListener("animationiteration", figur1Reset);
     // listening for a mousedown on the game elements, and directs to the clickHandler
     document.querySelector("#figur1_container").addEventListener("mousedown", clickFigur1Handler);
-    document.querySelector("#figur4_container").addEventListener("mousedown", clickFigur4Handler);
 
+
+
+
+    // gives a random position to figur4
+    document.querySelector("#figur4_container").classList.add("pos" + myRand);
+    // animation jump begins
+    document.querySelector("#figur4_container").classList.add("jump");
+    // listening for a the animation-end, and directs to the the reset
+    document.querySelector("#figur4_container").addEventListener("animationiteration", figur4Reset);
+    // listening for a mousedown on the game elements, and directs to the clickHandler
+    document.querySelector("#figur4_container").addEventListener("mousedown", clickFigur4Handler);
 }
+
+
+
+
 
 
 
@@ -65,7 +76,6 @@ function clickFigur1Handler() {
     console.log("Liv er = " + life);
 
     life -= 1;
-
 }
 
 function figur1Reset() {
@@ -76,8 +86,12 @@ function figur1Reset() {
     document.querySelector("#figur1_container").removeEventListener("animationend", figur1Reset)
 
     document.querySelector("#figur1_container").offsetHeight;
-    // adds a new position to the game element
-    document.querySelector("#figur1_container").classList.add("pos2_figur1");
+
+    myRand = Math.floor(Math.random() * 4) + 1;
+    console.log(myRand);
+
+    // adds a new random position to the game element
+    document.querySelector("#figur1_container").classList.add("pos" + myRand);
     // animation jump begins
     document.querySelector("#figur1_container").classList.add("jump");
     document.querySelector("#figur1_container").addEventListener("mousedown", clickFigur1Handler);
@@ -112,7 +126,11 @@ function figur4Reset() {
     document.querySelector("#figur4_container").removeEventListener("animationend", figur4Reset)
 
     document.querySelector("#figur4_container").offsetHeight;
-    document.querySelector("#figur4_container").classList.add("pos2_figur4");
+
+    myRand = Math.floor(Math.random() * 4) + 1;
+    console.log(myRand);
+
+    document.querySelector("#figur4_container").classList.add("pos" + myRand);
     document.querySelector("#figur4_container").classList.add("jump");
     document.querySelector("#figur4_container").addEventListener("mousedown", clickFigur4Handler);
 }
