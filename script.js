@@ -11,7 +11,6 @@ function showPage() {
 }
 
 
-
 function startGame() {
     console.log("startGame");
     document.querySelector("#start").classList.add("hidden");
@@ -21,31 +20,22 @@ function startGame() {
 
     life = 3;
 
-
     // GIVES A RANDOM POSITION - NOTE! HAVE A LOOK AT NEXT POINT WITH + myRand!
     myRand = Math.floor(Math.random() * 4) + 1;
     console.log(myRand);
 
 
-    // gives a random position to figur4
-    document.querySelector("#figur1_container").classList.add("pos" + myRand);
-    // animation jump begins
+    document.querySelector("#figur1_container").classList.add("pos" + myRand, "delay1", "speed1");
+    document.querySelector("#figur4_container").classList.add("pos" + myRand, "delay2", "speed2");
+
     document.querySelector("#figur1_container").classList.add("jump");
-    // listening for a the animation-end, and directs to the the reset
-    document.querySelector("#figur1_container").addEventListener("animationiteration", figur1Reset);
-    // listening for a mousedown on the game elements, and directs to the clickHandler
-    document.querySelector("#figur1_container").addEventListener("mousedown", clickFigur1Handler);
-
-
-
-
-    // gives a random position to figur4
-    document.querySelector("#figur4_container").classList.add("pos" + myRand);
-    // animation jump begins
     document.querySelector("#figur4_container").classList.add("jump");
-    // listening for a the animation-end, and directs to the the reset
+
+
+    document.querySelector("#figur1_container").addEventListener("animationiteration", figur1Reset);
     document.querySelector("#figur4_container").addEventListener("animationiteration", figur4Reset);
-    // listening for a mousedown on the game elements, and directs to the clickHandler
+
+    document.querySelector("#figur1_container").addEventListener("mousedown", clickFigur1Handler);
     document.querySelector("#figur4_container").addEventListener("mousedown", clickFigur4Handler);
 }
 
@@ -92,6 +82,14 @@ function figur1Reset() {
 
     // adds a new random position to the game element
     document.querySelector("#figur1_container").classList.add("pos" + myRand);
+
+    //sæt variablen lig med et tilfældigt tal mellem 1 og 3
+    myRand = Math.floor(Math.random() * 2) + 1;
+
+    //giv container ny tilfældig speed
+    document.querySelector("#figur1_container").classList.add("speed" + myRand);
+
+
     // animation jump begins
     document.querySelector("#figur1_container").classList.add("jump");
     document.querySelector("#figur1_container").addEventListener("mousedown", clickFigur1Handler);
@@ -131,6 +129,10 @@ function figur4Reset() {
     console.log(myRand);
 
     document.querySelector("#figur4_container").classList.add("pos" + myRand);
+
+    myRand = Math.floor(Math.random() * 2) + 1;
+    document.querySelector("#figur4_container").classList.add("speed" + myRand);
+
     document.querySelector("#figur4_container").classList.add("jump");
     document.querySelector("#figur4_container").addEventListener("mousedown", clickFigur4Handler);
 }

@@ -115,6 +115,23 @@
     left: 10vw;
 }
 
+.delay1 {
+    /* her skriver jeg ikke noget da den bare skal starte uden delay */
+}
+
+.delay2 {
+    animation-duration: 3s;
+}
+
+
+.speed1 {
+    animation-duration: 4;
+}
+
+.speed2 {
+    animation-duration: 2s;
+}
+
 #figur1_container {
     position: absolute;
 }
@@ -232,6 +249,23 @@
     position: absolute;
 
 }
+
+
+#score_board_star_container {
+    top: 10vw;
+    right: 5vw;
+}
+
+
+#score_board_star_sprite {
+    background-image: url(svg/stjerne_gul.svg);
+    background-size: cover;
+    position: absolute;
+    height: 5.5vw;
+    width: 6.6vw;
+
+}
+
 
 
 
