@@ -1,6 +1,7 @@
 let myRand;
 let points;
 let life;
+let speed;
 
 
 window.addEventListener("load", showPage);
@@ -24,18 +25,30 @@ function startGame() {
     //Reset points to 3
     life = 3;
 
+    //reset speed
+    speed = 1;
+
     //Start timer
     document.querySelector("#time_sprite").classList.add("time");
     document.querySelector("#time_container").addEventListener("animationend", stopGame);
 
 
-
     // Gives a random position with a random delay to a container
     myRand = Math.floor(Math.random() * 4) + 1;
-    document.querySelector("#figur1_container").classList.add("pos" + myRand, "delay1", "speed1");
+    document.querySelector("#figur1_container").classList.add("pos" + myRand)
+    myRand = Math.floor(Math.random() * 4) + 1;
+    document.querySelector("#figur1_container").classList.add("delay" + myRand)
+    document.querySelector("#figur1_container").classList.add("speed" + speed);
+
+
+
 
     myRand = Math.floor(Math.random() * 4) + 1;
-    document.querySelector("#figur4_container").classList.add("pos" + myRand, "delay2", "speed2");
+    document.querySelector("#figur4_container").classList.add("pos" + myRand);
+    myRand = Math.floor(Math.random() * 4) + 1;
+    document.querySelector("#figur4_container").classList.add("delay" + myRand)
+    document.querySelector("#figur4_container").classList.add("speed" + speed);
+
 
 
     //Start jump animation on all elements
@@ -106,11 +119,9 @@ function figur1Reset() {
     console.log("position for figur1 is now " + myRand);
     document.querySelector("#figur1_container").classList.add("pos" + myRand);
 
-    //sæt variablen lig med et tilfældigt tal mellem 1 og 3
-    myRand = Math.floor(Math.random() * 2) + 1;
-
-    //giv container ny tilfældig speed
-    document.querySelector("#figur1_container").classList.add("speed" + myRand);
+    myRand = Math.floor(Math.random() * 4) + 1;
+    document.querySelector("#figur1_container").classList.add("delay" + myRand);
+    document.querySelector("#figur1_container").classList.add("speed" + speed);
 
 
     // animation jump begins
@@ -151,14 +162,16 @@ function figur4Reset() {
 
     document.querySelector("#figur4_container").offsetHeight;
 
+
     myRand = Math.floor(Math.random() * 4) + 1;
     console.log("position for figur4 is now " + myRand);
-
-
     document.querySelector("#figur4_container").classList.add("pos" + myRand);
 
-    myRand = Math.floor(Math.random() * 2) + 1;
-    document.querySelector("#figur4_container").classList.add("speed" + myRand);
+    myRand = Math.floor(Math.random() * 4) + 1;
+    document.querySelector("#figur4_container").classList.add("delay" + myRand);
+    document.querySelector("#figur4_container").classList.add("speed" + speed);
+
+
 
     document.querySelector("#figur4_container").classList.add("jump");
     document.querySelector("#figur4_container").addEventListener("mousedown", clickFigur4Handler);

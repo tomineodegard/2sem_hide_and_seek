@@ -87,49 +87,14 @@
 
 }
 
+/******************   game_elements  ************************/
+
 #game_elements {
     height: 100%;
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
-}
-
-.pos1 {
-    top: 14vw;
-    left: 33vw;
-}
-
-.pos2 {
-    top: 13vw;
-    left: 50vw;
-}
-
-.pos3 {
-    top: 25vw;
-    left: 87vw;
-}
-
-.pos4 {
-    top: 45vw;
-    left: 10vw;
-}
-
-.delay1 {
-    /* her skriver jeg ikke noget da den bare skal starte uden delay */
-}
-
-.delay2 {
-    animation-duration: 3s;
-}
-
-
-.speed1 {
-    animation-duration: 4;
-}
-
-.speed2 {
-    animation-duration: 2s;
 }
 
 #figur1_container {
@@ -199,7 +164,64 @@
     width: 8vw;
 }
 
+/******************   positions  ************************/
 
+
+.pos1 {
+    top: 14vw;
+    left: 33vw;
+}
+
+.pos2 {
+    top: 13vw;
+    left: 50vw;
+}
+
+.pos3 {
+    top: 25vw;
+    left: 87vw;
+}
+
+.pos4 {
+    top: 45vw;
+    left: 10vw;
+}
+
+/******************   delays  ************************/
+
+.delay1 {
+    animation-delay: 0s;
+}
+
+.delay2 {
+    animation-delay: 0.5s;
+}
+
+.delay3 {
+    animation-delay: 1s;
+}
+
+.delay4 {
+    animation-delay: 1.5s;
+}
+
+
+/******************   speed  ************************/
+
+.speed1 {
+    animation-duration: 2s;
+}
+
+.speed2 {
+    animation-duration: 1.5s;
+}
+
+.speed3 {
+    animation-duration: 1s;
+}
+
+
+/******************   game_ui  ************************/
 
 #game_ui {
     height: 100%;
@@ -308,7 +330,7 @@
 
 }
 
-
+/******************   animations  ************************/
 
 
 .jump {
