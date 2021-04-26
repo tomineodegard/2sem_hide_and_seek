@@ -15,6 +15,10 @@ function startGame() {
     console.log("startGame");
     document.querySelector("#start").classList.add("hidden");
 
+    //start en timer-animation
+    document.querySelector("#time_sprite").classList.add("time");
+
+
     points = 0;
     document.querySelector("#score_board").innerHTML = points;
 
@@ -37,6 +41,9 @@ function startGame() {
 
     document.querySelector("#figur1_container").addEventListener("mousedown", clickFigur1Handler);
     document.querySelector("#figur4_container").addEventListener("mousedown", clickFigur4Handler);
+
+    //Lytter efter om tiden er gået
+    document.querySelector("#time_sprite").addEventListener("animationend", stopGame);
 }
 
 
@@ -135,4 +142,9 @@ function figur4Reset() {
 
     document.querySelector("#figur4_container").classList.add("jump");
     document.querySelector("#figur4_container").addEventListener("mousedown", clickFigur4Handler);
+}
+
+function stopGame() {
+    console.log("times up, you earned" + point + "points!");
+
 }

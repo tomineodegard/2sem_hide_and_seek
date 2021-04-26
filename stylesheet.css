@@ -210,21 +210,63 @@
     pointer-events: none;
 }
 
-#time_board {
+/* #time_board {
     position: absolute;
     top: 40vw;
     left: 80vw;
 
+} */
+
+#time_container {
+    position: absolute;
+    width: 6vw;
+    height: 30vw;
+    border: 4px solid black;
+    top: 10vw;
+    left: 2vw;
+}
+
+#time_sprite {
+    width: 6vw;
+    height: 30vw;
+    background-color: lime;
+    transform-origin: center bottom;
+}
+
+.time {
+    animation-name: time_kf;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+}
+
+@keyframes time_kf {
+    0% {
+        transform: scaleY(1);
+        background-color: lime;
+    }
+
+    50% {
+        background-color: yellow;
+
+    }
+
+    100% {
+        transform: scaleY(0);
+        background-color: red;
+
+    }
 }
 
 
-#time_star_sprite {
+
+/* #time_star_sprite {
     background-image: url(svg/stjerne_gul_4.svg);
     background-size: cover;
     height: 12.3vw;
     width: 12vw;
 
-}
+} */
 
 #energy_board {
     position: absolute;
