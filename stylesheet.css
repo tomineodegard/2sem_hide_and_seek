@@ -21,7 +21,7 @@
     position: absolute;
     width: 12vw;
     height: 13vw;
-    background-image: url(svg/play_btn%20copy.svg);
+    background-image: url(svg/play_btn_with_text.svg);
     background-size: cover;
     left: 79vw;
     top: 33vw;
@@ -44,7 +44,7 @@
 #level_complete {
     height: 100%;
     width: 100%;
-    background-image: url(svg/next_level.svg);
+    background-image: url(svg/level_complete.svg);
     position: absolute;
     top: 0;
     left: 0;
