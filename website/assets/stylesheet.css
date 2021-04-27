@@ -1,0 +1,119 @@
+section {
+    max-width: 1200px;
+    margin: auto;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+body {
+    background-color: whitesmoke;
+}
+
+h1 {
+    font-family: 'Rubik', sans-serif;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 2rem;
+    color: rgb(126, 49, 90);
+}
+
+
+h2 {
+    font-family: 'Rubik', sans-serif;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: black;
+}
+
+p {
+    color: black;
+}
+
+#logo img {
+    height: 6rem;
+    width: auto;
+}
+
+
+
+
+#game_screens img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#picture_from_game img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+.ui_stars img {
+    height: 5.5rem;
+    width: 5.5rem;
+}
+
+
+.figures img {
+    height: 5.5rem;
+    width: 5.5rem;
+}
+
+
+/******************   nav    ****************/
+
+header {
+    position: sticky;
+    top: 0;
+    padding: 0.5rem 1.5rem;
+    background-color: #FF73A0;
+}
+
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    overflow-x: auto;
+    flex-wrap: wrap;
+}
+
+ul {
+    padding: 0;
+}
+
+
+
+li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+
+    font-family: 'Rubik', sans-serif;
+    text-decoration: none;
+    font-weight: 700;
+    color: rgb(126, 49, 90);
+}
+
+li a:hover {
+    color: #FFA1D3;
+}
+
+
+footer p {
+    text-align: center;
+    color: rgb(126, 49, 90);
+    font-family: 'Rubik', sans-serif;
+    text-decoration: none;
+    font-weight: 700;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+
+}

@@ -14,6 +14,7 @@ function showPage() {
 
 function startGame() {
     console.log("startGame");
+    const timer = document.querySelector("#time_container");
 
     //Hide startscreen
     document.querySelector("#start").classList.add("hidden");
@@ -29,7 +30,9 @@ function startGame() {
     speed = 1;
 
     //Start timer
-    document.querySelector("#time_sprite").classList.add("time");
+
+    timer.firstElementChild.classList.add("time");
+
     document.querySelector("#time_container").addEventListener("animationend", stopGame);
 
 
