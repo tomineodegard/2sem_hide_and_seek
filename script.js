@@ -3,6 +3,16 @@ let points;
 let life;
 let speed;
 
+const timer = document.querySelector("#time_container");
+
+const figur1 = document.querySelector("#figur1_container");
+const figur2 = document.querySelector("#figur2_container");
+const figur3 = document.querySelector("#figur3_container");
+const figur4 = document.querySelector("#figur4_container");
+const figur5 = document.querySelector("#figur5_container");
+
+
+
 
 window.addEventListener("load", showPage);
 
@@ -14,7 +24,6 @@ function showPage() {
 
 function startGame() {
     console.log("startGame");
-    const timer = document.querySelector("#time_container");
 
     //Hide startscreen
     document.querySelector("#start").classList.add("hidden");
@@ -32,65 +41,90 @@ function startGame() {
     //Start timer
 
     timer.firstElementChild.classList.add("time");
+    timer.addEventListener("animationend", stopGame);
 
-    document.querySelector("#time_container").addEventListener("animationend", stopGame);
 
 
     // Gives a random position with a random delay to a container
     myRand = Math.floor(Math.random() * 4) + 1;
-    document.querySelector("#figur1_container").classList.add("pos" + myRand)
+    figur1.classList.add("pos" + myRand)
     myRand = Math.floor(Math.random() * 4) + 1;
-    document.querySelector("#figur1_container").classList.add("delay" + myRand)
-    document.querySelector("#figur1_container").classList.add("speed" + speed);
-
-
-
+    figur1.classList.add("delay" + myRand)
+    figur1.classList.add("speed" + speed);
 
     myRand = Math.floor(Math.random() * 4) + 1;
-    document.querySelector("#figur4_container").classList.add("pos" + myRand);
+    figur2.classList.add("pos" + myRand);
     myRand = Math.floor(Math.random() * 4) + 1;
-    document.querySelector("#figur4_container").classList.add("delay" + myRand)
-    document.querySelector("#figur4_container").classList.add("speed" + speed);
+    figur2.classList.add("delay" + myRand)
+    figur2.classList.add("speed" + speed);
+
+    myRand = Math.floor(Math.random() * 4) + 1;
+    figur3.classList.add("pos" + myRand);
+    myRand = Math.floor(Math.random() * 4) + 1;
+    figur3.classList.add("delay" + myRand)
+    figur3.classList.add("speed" + speed);
+
+    myRand = Math.floor(Math.random() * 4) + 1;
+    figur4.classList.add("pos" + myRand);
+    myRand = Math.floor(Math.random() * 4) + 1;
+    figur4.classList.add("delay" + myRand)
+    figur4.classList.add("speed" + speed);
+
+    myRand = Math.floor(Math.random() * 4) + 1;
+    figur5.classList.add("pos" + myRand);
+    myRand = Math.floor(Math.random() * 4) + 1;
+    figur5.classList.add("delay" + myRand)
+    figur5.classList.add("speed" + speed);
 
 
 
     //Start jump animation on all elements
-    document.querySelector("#figur1_container").classList.add("jump");
-    document.querySelector("#figur4_container").classList.add("jump");
+    figur1.classList.add("jump");
+    figur2.classList.add("jump");
+    figur3.classList.add("jump");
+    figur4.classList.add("jump");
+    figur5.classList.add("jump");
+
 
     //Listen for jump animation to be done
-    document.querySelector("#figur1_container").addEventListener("animationiteration", figur1Reset);
-    document.querySelector("#figur4_container").addEventListener("animationiteration", figur4Reset);
+    figur1.addEventListener("animationiteration", figur1Reset);
+    figur2.addEventListener("animationiteration", figur4Reset);
+    figur3.addEventListener("animationiteration", figur4Reset);
+    figur4.addEventListener("animationiteration", figur4Reset);
+    figur5.addEventListener("animationiteration", figur4Reset);
 
 
     //Listen for a mousedown-event
-    document.querySelector("#figur1_container").addEventListener("mousedown", clickFigur1Handler);
-    document.querySelector("#figur4_container").addEventListener("mousedown", clickFigur4Handler);
+    figur1.addEventListener("mousedown", clickFigurBadHandler);
+    figur2.addEventListener("mousedown", clickFigurGoodHandler);
+    figur3.addEventListener("mousedown", clickFigurGoodHandler);
+    figur4.addEventListener("mousedown", clickFigurGoodHandler);
+    figur5.addEventListener("mousedown", clickFigurGoodHandler);
 
 
     //Listen for the time-expire
-    document.querySelector("#time_sprite").addEventListener("animationend", stopGame);
+    timer.firstElementChild.addEventListener("animationend", stopGame);
 }
 
 
 
 
 /**************************** BAD - GREEN GIRL *************************************/
-function clickFigur1Handler() {
-    console.log("clickFigur1Handler");
+function clickFigurBadHandler() {
+    console.log("clickFigurBadHandler");
     // removes the mousedown - not able to click several times
-    document.querySelector("#figur1_container").removeEventListener("mousedown", clickFigur1Handler);
+    this.removeEventListener("mousedown", clickFigurBadHandler);
 
     // pauses the animation when clicked
-    document.querySelector("#figur1_container").classList.add("pause");
+    this.classList.add("pause");
 
 
 
     // new animation starts on sprite element (Sprite er firstElementChild)
-    document.querySelector("#figur1_sprite").classList.add("click_bad");
+    this.firstElementChild.classList.add("click_bad");
 
     // game element is directed to a reset, with a new position when animation is done
-    document.querySelector("#figur1_sprite").addEventListener("animationend", figur1Reset);
+    this.addEventListener("animationend", figur1Reset);
 
 
     // loose life by clicking figur1
@@ -108,40 +142,41 @@ function clickFigur1Handler() {
 function figur1Reset() {
     console.log("figur1Reset");
     // set the classes back to 0
-    document.querySelector("#figur1_container").classList = "";
-    document.querySelector("#figur1_sprite").classList = "";
-    document.querySelector("#figur1_container").removeEventListener("animationend", figur1Reset);
+    this.classList = "";
+    console.log(this);
+    this.firstElementChild.classList = "";
+    this.removeEventListener("animationend", figur1Reset);
 
     //For at kunne genstarte op_ned animationen, da vi fjener og tilføjer den i samme function
-    document.querySelector("#figur1_container").offsetHeight;
+    this.offsetHeight;
 
 
 
     // adds a new random position to the game element
     myRand = Math.floor(Math.random() * 4) + 1;
     console.log("position for figur1 is now " + myRand);
-    document.querySelector("#figur1_container").classList.add("pos" + myRand);
+    this.classList.add("pos" + myRand);
 
     myRand = Math.floor(Math.random() * 4) + 1;
-    document.querySelector("#figur1_container").classList.add("delay" + myRand);
-    document.querySelector("#figur1_container").classList.add("speed" + speed);
+    this.classList.add("delay" + myRand);
+    this.classList.add("speed" + speed);
 
 
     // animation jump begins
-    document.querySelector("#figur1_container").classList.add("jump");
-    document.querySelector("#figur1_container").addEventListener("mousedown", clickFigur1Handler);
+    this.classList.add("jump");
+    this.addEventListener("mousedown", clickFigurBadHandler);
 }
 
 
 
 /**************************** GOOD - PURPLE GIRL *************************************/
-function clickFigur4Handler() {
-    console.log("clickFigur4Handler");
-    document.querySelector("#figur4_container").removeEventListener("mousedown", clickFigur4Handler);
+function clickFigurGoodHandler() {
+    console.log("clickFigurGoodHandler");
+    this.removeEventListener("mousedown", clickFigurGoodHandler);
 
-    document.querySelector("#figur4_container").classList.add("pause");
-    document.querySelector("#figur4_sprite").classList.add("click_good");
-    document.querySelector("#figur4_sprite").addEventListener("animationend", figur4Reset);
+    this.classList.add("pause");
+    this.firstElementChild.classList.add("click_good");
+    this.addEventListener("animationend", figur4Reset);
 
 
     points += 1;
@@ -159,47 +194,67 @@ function clickFigur4Handler() {
 
 function figur4Reset() {
     console.log("figur4Reset");
-    document.querySelector("#figur4_container").classList = "";
-    document.querySelector("#figur4_sprite").classList = "";
-    document.querySelector("#figur4_container").removeEventListener("animationend", figur4Reset)
+    this.classList = "";
+    console.log(this);
+    this.firstElementChild.classList = "";
+    this.removeEventListener("animationend", figur4Reset);
 
-    document.querySelector("#figur4_container").offsetHeight;
+    this.offsetHeight;
 
 
     myRand = Math.floor(Math.random() * 4) + 1;
     console.log("position for figur4 is now " + myRand);
-    document.querySelector("#figur4_container").classList.add("pos" + myRand);
+    this.classList.add("pos" + myRand);
 
     myRand = Math.floor(Math.random() * 4) + 1;
-    document.querySelector("#figur4_container").classList.add("delay" + myRand);
-    document.querySelector("#figur4_container").classList.add("speed" + speed);
+    this.classList.add("delay" + myRand);
+    this.classList.add("speed" + speed);
 
 
 
-    document.querySelector("#figur4_container").classList.add("jump");
-    document.querySelector("#figur4_container").addEventListener("mousedown", clickFigur4Handler);
+    this.classList.add("jump");
+    this.addEventListener("mousedown", clickFigurGoodHandler);
 }
+
+
 
 function stopGame() {
     console.log("stopGame");
     console.log("times up, you earned " + points + "points!");
 
     //ryd op, fjern alt på alle container og sprite
-    document.querySelector("#time_sprite").classList.remove("time");
-    document.querySelector("#time_container").removeEventListener("animationend", stopGame);
+    timer.firstElementChild.classList.remove("time");
+    timer.removeEventListener("animationend", stopGame);
 
-    document.querySelector("#figur1_container").classList = "";
-    document.querySelector("#figur1_sprite").classList = "";
-    document.querySelector("#figur1_container").removeEventListener("mousedown", clickFigur1Handler);
-    document.querySelector("#figur1_container").removeEventListener("animationiteration", figur1Reset);
-    document.querySelector("#figur1_sprite").removeEventListener("animationend", figur1Reset);
+    figur1.classList = "";
+    figur1.firstElementChild.classList = "";
+    figur1.removeEventListener("mousedown", clickFigurBadHandler);
+    figur1.removeEventListener("animationiteration", figur1Reset);
+    figur1.firstElementChild.removeEventListener("animationend", figur1Reset);
 
+    figur3.classList = "";
+    figur3.firstElementChild.classList = "";
+    figur3.removeEventListener("mousedown", clickFigurGoodHandler);
+    figur3.removeEventListener("animationiteration", figur4Reset);
+    figur3.removeEventListener("animationend", figur4Reset);
 
-    document.querySelector("#figur4_container").classList = "";
-    document.querySelector("#figur4_sprite").classList = "";
-    document.querySelector("#figur4_container").removeEventListener("mousedown", clickFigur4Handler);
-    document.querySelector("#figur1_container").removeEventListener("animationiteration", figur4Reset);
-    document.querySelector("#figur4_container").removeEventListener("animationend", figur4Reset)
+    figur4.classList = "";
+    figur4.firstElementChild.classList = "";
+    figur4.removeEventListener("mousedown", clickFigurGoodHandler);
+    figur4.removeEventListener("animationiteration", figur4Reset);
+    figur4.removeEventListener("animationend", figur4Reset);
+
+    figur2.classList = "";
+    figur2.firstElementChild.classList = "";
+    figur2.removeEventListener("mousedown", clickFigurGoodHandler);
+    figur2.removeEventListener("animationiteration", figur4Reset);
+    figur2.removeEventListener("animationend", figur4Reset);
+
+    figur5.classList = "";
+    figur5.firstElementChild.classList = "";
+    figur5.removeEventListener("mousedown", clickFigurGoodHandler);
+    figur5.removeEventListener("animationiteration", figur4Reset);
+    figur5.removeEventListener("animationend", figur4Reset);
 
 
 
@@ -217,6 +272,7 @@ function stopGame() {
 
 function gameOver() {
     console.log("gameOver");
+
 }
 
 function levelComplete() {
