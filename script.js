@@ -3,7 +3,7 @@ let points;
 let life;
 let speed;
 
-const timer = document.querySelector("#time_container");
+const timer = document.querySelector("#time_star_container");
 
 const figur1 = document.querySelector("#figur1_container");
 const figur2 = document.querySelector("#figur2_container");
@@ -17,8 +17,11 @@ const figur5 = document.querySelector("#figur5_container");
 window.addEventListener("load", showPage);
 
 function showPage() {
-    console.log("show page");
+    console.log("showPage");
+
     document.querySelector("#play").addEventListener("click", startGame);
+    document.querySelector("#level_complete").classList.add("hidden");
+    document.querySelector("#game_over").classList.add("hidden");
 }
 
 
@@ -27,6 +30,9 @@ function startGame() {
 
     //Hide startscreen
     document.querySelector("#start").classList.add("hidden");
+
+    //Starter animationen
+    timer.classList.add("time");
 
     //Reset points to 0
     points = 0;
@@ -261,7 +267,7 @@ function stopGame() {
 
     if (life <= 0) {
         gameOver();
-    } else if (points >= 10) {
+    } else if (points >= 5) {
         levelComplete();
     } else {
         gameOver();
@@ -272,9 +278,12 @@ function stopGame() {
 
 function gameOver() {
     console.log("gameOver");
+    document.querySelector("#game_over").classList.remove("hidden");
+
 
 }
 
 function levelComplete() {
     console.log("levelComplete");
+    document.querySelector("#level_complete").classList.remove("hidden");
 }

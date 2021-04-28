@@ -37,7 +37,7 @@
     top: 0;
     left: 0;
     background-image: url(svg/game_over.svg);
-    display: none;
+    background-size: cover;
 
 }
 
@@ -45,10 +45,10 @@
     height: 100%;
     width: 100%;
     background-image: url(svg/level_complete.svg);
+    background-size: cover;
     position: absolute;
     top: 0;
     left: 0;
-    display: none;
 
 }
 
@@ -233,46 +233,7 @@
 
 } */
 
-#time_container {
-    position: absolute;
-    width: 6vw;
-    height: 30vw;
-    border: 4px solid black;
-    top: 10vw;
-    left: 2vw;
-}
 
-#time_sprite {
-    width: 6vw;
-    height: 30vw;
-    background-color: lime;
-    transform-origin: center bottom;
-}
-
-.time {
-    animation-name: time_kf;
-    animation-duration: 10s;
-    animation-timing-function: linear;
-    animation-fill-mode: both;
-}
-
-@keyframes time_kf {
-    0% {
-        transform: scaleY(1);
-        background-color: lime;
-    }
-
-    50% {
-        background-color: yellow;
-
-    }
-
-    100% {
-        transform: scaleY(0);
-        background-color: red;
-
-    }
-}
 
 
 
@@ -283,6 +244,41 @@
     width: 12vw;
 
 } */
+
+
+
+#time_star_container {
+    position: absolute;
+    bottom: 2vw;
+    right: 5vw;
+}
+
+#time_star_sprite {
+    height: 12vw;
+    width: 12vw;
+    background-image: url(timeglass_stars.svg);
+    background-size: 2400% 100%;
+}
+
+.time {
+    animation-name: time_kf;
+    animation-duration: 15s;
+    animation-timing-function: steps(11);
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+
+@keyframes time_kf {
+    0% {
+        background-position: 0;
+    }
+
+    100% {
+        background-position: 2200vw;
+    }
+}
+
+
 
 #energy_board {
     position: absolute;
