@@ -279,6 +279,8 @@ function stopGame() {
 function gameOver() {
     console.log("gameOver");
     document.querySelector("#game_over").classList.remove("hidden");
+    document.querySelector("#play_again_pink").addEventListener("click", startGame);
+
 
 
 }
