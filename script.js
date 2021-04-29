@@ -28,6 +28,8 @@ function showPage() {
 function startGame() {
     console.log("startGame");
 
+
+
     //Hide startscreen
     document.querySelector("#start").classList.add("hidden");
 
