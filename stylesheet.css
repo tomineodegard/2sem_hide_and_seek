@@ -215,8 +215,8 @@
 
 #time_star_container {
     position: absolute;
-    bottom: 2vw;
-    right: 5vw;
+    bottom: 3vw;
+    right: 7vw;
 }
 
 #time_star_sprite {
@@ -302,11 +302,11 @@
 
 #play_again_pink {
     position: absolute;
-    width: 12vw;
-    height: 13vw;
+    width: 22.6vw;
+    height: 7.5vw;
     background-image: url(svg/try_again_btn.svg);
     background-size: cover;
-    left: 79vw;
+    left: 69vw;
     top: 33vw;
 
     cursor: pointer;
