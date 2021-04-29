@@ -223,7 +223,8 @@
     height: 12vw;
     width: 12vw;
     background-image: url(timeglass_stars.svg);
-    background-size: 2400% 100%;
+    background-size: 1200% 100%;
+    background-position: -1100%;
 }
 
 .time {
@@ -236,11 +237,11 @@
 
 @keyframes time_kf {
     0% {
-        background-position: 0;
+        background-position: -1100%;
     }
 
     100% {
-        background-position: 2200vw;
+        background-position: 0%;
     }
 }
 
