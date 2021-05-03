@@ -5,7 +5,7 @@
     overflow: hidden;
 }
 
-#start {
+#startscreen {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -16,7 +16,7 @@
 
 }
 
-#game_over {
+#game_overscreen {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -27,7 +27,7 @@
 
 }
 
-#level_complete {
+#level_completescreen {
     height: 100%;
     width: 100%;
     background-image: url(svg/level_complete.svg);
@@ -213,15 +213,17 @@
 }
 
 
+
+
 #time_star_container {
     position: absolute;
-    bottom: 3vw;
-    right: 7vw;
+    bottom: 0.2vw;
+    right: 4.5vw;
 }
 
 #time_star_sprite {
-    height: 12vw;
-    width: 12vw;
+    height: 18vw;
+    width: 18vw;
     background-image: url(timeglass_stars.svg);
     background-size: 1200% 100%;
     background-position: -1100%;
@@ -287,20 +289,20 @@
 
 }
 
-#play {
+#play_btn {
     position: absolute;
     width: 12vw;
     height: 13vw;
     background-image: url(svg/play_btn_with_text.svg);
     background-size: cover;
-    left: 79vw;
-    top: 33vw;
+    left: 77vw;
+    top: 29vw;
 
     cursor: pointer;
 
 }
 
-#play_again_pink {
+#play_again_pink_btn {
     position: absolute;
     width: 22.6vw;
     height: 7.5vw;
@@ -313,7 +315,7 @@
 
 }
 
-#meny_blue {
+#meny_blue_btn {
     position: absolute;
     width: 22.6vw;
     height: 7.5vw;
@@ -339,7 +341,7 @@
 
 }
 
-#meny_pink {
+#meny_pink_btn {
     position: absolute;
     width: 22.6vw;
     height: 7.5vw;

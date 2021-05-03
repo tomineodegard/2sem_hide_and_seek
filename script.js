@@ -11,6 +11,10 @@ const figur3 = document.querySelector("#figur3_container");
 const figur4 = document.querySelector("#figur4_container");
 const figur5 = document.querySelector("#figur5_container");
 
+const heart1 = document.querySelector("#heart1");
+const heart2 = document.querySelector("#heart2");
+const heart3 = document.querySelector("#heart3");
+
 
 
 
@@ -19,9 +23,9 @@ window.addEventListener("load", showPage);
 function showPage() {
     console.log("showPage");
 
-    document.querySelector("#play").addEventListener("click", startGame);
-    document.querySelector("#level_complete").classList.add("hidden");
-    document.querySelector("#game_over").classList.add("hidden");
+    document.querySelector("#play_btn").addEventListener("click", startGame);
+    document.querySelector("#level_completescreen").classList.add("hidden");
+    document.querySelector("#game_overscreen").classList.add("hidden");
 }
 
 
@@ -31,7 +35,9 @@ function startGame() {
 
 
     //Hide startscreen
-    document.querySelector("#start").classList.add("hidden");
+    document.querySelector("#startscreen").classList.add("hidden");
+    document.querySelector("#level_completescreen").classList.add("hidden");
+    document.querySelector("#game_overscreen").classList.add("hidden");
 
     //Starter animationen
     timer.classList.add("time");
@@ -42,6 +48,9 @@ function startGame() {
 
     //Reset points to 3
     life = 3;
+    heart1.classList.remove("hidden");
+    heart2.classList.remove("hidden");
+    heart3.classList.remove("hidden");
 
     //reset speed
     speed = 1;
@@ -108,6 +117,7 @@ function startGame() {
     figur3.addEventListener("mousedown", clickFigurGoodHandler);
     figur4.addEventListener("mousedown", clickFigurGoodHandler);
     figur5.addEventListener("mousedown", clickFigurGoodHandler);
+
 
 
     //Listen for the time-expire
@@ -280,8 +290,11 @@ function stopGame() {
 
 function gameOver() {
     console.log("gameOver");
-    document.querySelector("#game_over").classList.remove("hidden");
-    document.querySelector("#play_again_pink").addEventListener("click", startGame);
+    document.querySelector("#game_overscreen").classList.remove("hidden");
+
+    document.querySelector("#play_again_pink_btn").addEventListener("click", startGame);
+    document.querySelector("#meny_blue_btn").addEventListener("click", showPage);
+    document.querySelector("#startscreen").classList.remove("hidden");
 
 
 
@@ -289,5 +302,9 @@ function gameOver() {
 
 function levelComplete() {
     console.log("levelComplete");
-    document.querySelector("#level_complete").classList.remove("hidden");
+    document.querySelector("#level_completescreen").classList.remove("hidden");
+
+    document.querySelector("#next_level_btn").addEventListener("click", startGame);
+    document.querySelector("#meny_pink_btn").addEventListener("click", showPage);
+    document.querySelector("#startscreen").classList.remove("hidden");
 }
