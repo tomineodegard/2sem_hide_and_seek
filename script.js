@@ -15,6 +15,9 @@ const heart1 = document.querySelector("#heart1");
 const heart2 = document.querySelector("#heart2");
 const heart3 = document.querySelector("#heart3");
 
+const gameOverPointsText = document.querySelector("#game_over_points_text");
+const gameOverPointsText2 = document.querySelector("#game_over_points_text2");
+
 
 
 
@@ -25,7 +28,8 @@ function showPage() {
 
     document.querySelector("#play_btn").addEventListener("click", startGame);
     document.querySelector("#level_completescreen").classList.add("hidden");
-    document.querySelector("#game_overscreen").classList.add("hidden");
+    document.querySelector("#game_over_points_screen").classList.add("hidden");
+    document.querySelector("#game_over_lives_screen").classList.add("hidden");
 }
 
 
@@ -37,7 +41,8 @@ function startGame() {
     //Hide startscreen
     document.querySelector("#startscreen").classList.add("hidden");
     document.querySelector("#level_completescreen").classList.add("hidden");
-    document.querySelector("#game_overscreen").classList.add("hidden");
+    document.querySelector("#game_over_points_screen").classList.add("hidden");
+    document.querySelector("#game_over_lives_screen").classList.add("hidden");
 
     //Starter animationen
     timer.classList.add("time");
@@ -63,31 +68,31 @@ function startGame() {
 
 
     // Gives a random position with a random delay to a container
-    myRand = Math.floor(Math.random() * 4) + 1;
+    myRand = Math.floor(Math.random() * 5) + 1;
     figur1.classList.add("pos" + myRand)
     myRand = Math.floor(Math.random() * 4) + 1;
     figur1.classList.add("delay" + myRand)
     figur1.classList.add("speed" + speed);
 
-    myRand = Math.floor(Math.random() * 4) + 1;
+    myRand = Math.floor(Math.random() * 5) + 1;
     figur2.classList.add("pos" + myRand);
     myRand = Math.floor(Math.random() * 4) + 1;
     figur2.classList.add("delay" + myRand)
     figur2.classList.add("speed" + speed);
 
-    myRand = Math.floor(Math.random() * 4) + 1;
+    myRand = Math.floor(Math.random() * 5) + 1;
     figur3.classList.add("pos" + myRand);
     myRand = Math.floor(Math.random() * 4) + 1;
     figur3.classList.add("delay" + myRand)
     figur3.classList.add("speed" + speed);
 
-    myRand = Math.floor(Math.random() * 4) + 1;
+    myRand = Math.floor(Math.random() * 5) + 1;
     figur4.classList.add("pos" + myRand);
     myRand = Math.floor(Math.random() * 4) + 1;
     figur4.classList.add("delay" + myRand)
     figur4.classList.add("speed" + speed);
 
-    myRand = Math.floor(Math.random() * 4) + 1;
+    myRand = Math.floor(Math.random() * 5) + 1;
     figur5.classList.add("pos" + myRand);
     myRand = Math.floor(Math.random() * 4) + 1;
     figur5.classList.add("delay" + myRand)
@@ -171,7 +176,7 @@ function figur1Reset() {
 
 
     // adds a new random position to the game element
-    myRand = Math.floor(Math.random() * 4) + 1;
+    myRand = Math.floor(Math.random() * 5) + 1;
     console.log("position for figur1 is now " + myRand);
     this.classList.add("pos" + myRand);
 
@@ -220,7 +225,7 @@ function figur4Reset() {
     this.offsetHeight;
 
 
-    myRand = Math.floor(Math.random() * 4) + 1;
+    myRand = Math.floor(Math.random() * 5) + 1;
     console.log("position for figur4 is now " + myRand);
     this.classList.add("pos" + myRand);
 
@@ -278,27 +283,44 @@ function stopGame() {
 
 
     if (life <= 0) {
-        gameOver();
+        gameOverLives();
     } else if (points >= 5) {
         levelComplete();
     } else {
-        gameOver();
+        gameOverPoints();
     }
 
 }
 
 
-function gameOver() {
-    console.log("gameOver");
-    document.querySelector("#game_overscreen").classList.remove("hidden");
+function gameOverPoints() {
+    console.log("gameOverPoints");
+    document.querySelector("#game_over_points_screen").classList.remove("hidden");
 
-    document.querySelector("#play_again_pink_btn").addEventListener("click", startGame);
+
+    gameOverPointsText.textContent = points;
+    gameOverPointsText2.textContent = "10";
+
+
+    document.querySelector("#try_again_pink_btn").addEventListener("click", startGame);
     document.querySelector("#meny_blue_btn").addEventListener("click", showPage);
     document.querySelector("#startscreen").classList.remove("hidden");
 
+}
 
+// TODO: Ask for help here! Do I need another if/else? How?
+
+function gameOverLives() {
+    console.log("gameOverLives");
+    document.querySelector("#game_over_lives_screen").classList.remove("hidden");
+
+    document.querySelector("#try_again_pink_btn").addEventListener("click", startGame);
+    document.querySelector("#meny_blue_btn").addEventListener("click", showPage);
+    document.querySelector("#startscreen").classList.remove("hidden");
 
 }
+
+
 
 function levelComplete() {
     console.log("levelComplete");

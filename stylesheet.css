@@ -16,7 +16,18 @@
 
 }
 
-#game_overscreen {
+#game_over_points_screen {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(svg/game_over2.svg);
+    background-size: cover;
+
+}
+
+#game_over_lives_screen {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -26,6 +37,7 @@
     background-size: cover;
 
 }
+
 
 #level_completescreen {
     height: 100%;
@@ -167,6 +179,13 @@
     left: 10vw;
 }
 
+.pos5 {
+    top: 60vw;
+    left: 5vw;
+}
+
+
+
 /******************   delays  ************************/
 
 .delay1 {
@@ -266,28 +285,25 @@
 
 
 #score_board {
-    font-size: 10rem;
-    top: 2vw;
-    right: 2vw;
+    font-size: 8rem;
+    font-family: sans-serif;
+    color: white;
+    text-shadow: -2px -2px black;
+    top: 4.5vw;
+    right: 7vw;
     position: absolute;
-
 }
 
 
-#score_board_star_container {
+#score_board_star_container img {
     top: 10vw;
     right: 5vw;
-}
-
-
-#score_board_star_sprite {
-    background-image: url(svg/stjerne_gul.svg);
     background-size: cover;
     position: absolute;
     height: 5.5vw;
     width: 6.6vw;
-
 }
+
 
 #play_btn {
     position: absolute;
@@ -302,14 +318,14 @@
 
 }
 
-#play_again_pink_btn {
+#try_again_pink_btn {
     position: absolute;
-    width: 22.6vw;
-    height: 7.5vw;
+    width: 19.9vw;
+    height: 6.5vw;
     background-image: url(svg/try_again_btn.svg);
     background-size: cover;
-    left: 69vw;
-    top: 33vw;
+    left: 72vw;
+    top: 38vw;
 
     cursor: pointer;
 
@@ -317,12 +333,38 @@
 
 #meny_blue_btn {
     position: absolute;
-    width: 22.6vw;
-    height: 7.5vw;
+    width: 19.9vw;
+    height: 6.5vw;
     background-image: url(svg/meny_blue_btn.svg);
     background-size: cover;
-    left: 69vw;
-    top: 43vw;
+    left: 72vw;
+    top: 46vw;
+
+    cursor: pointer;
+
+}
+
+#game_over_lives_screen #try_again_pink_btn {
+    position: absolute;
+    width: 19.9vw;
+    height: 6.5vw;
+    background-image: url(svg/try_again_btn.svg);
+    background-size: cover;
+    left: 68vw;
+    top: 36vw;
+
+    cursor: pointer;
+
+}
+
+#game_over_lives_screen #meny_blue_btn {
+    position: absolute;
+    width: 19.9vw;
+    height: 6.5vw;
+    background-image: url(svg/meny_blue_btn.svg);
+    background-size: cover;
+    left: 68vw;
+    top: 44vw;
 
     cursor: pointer;
 
@@ -335,7 +377,7 @@
     background-image: url(svg/next_level_btn.svg);
     background-size: cover;
     left: 69vw;
-    top: 33vw;
+    top: 28vw;
 
     cursor: pointer;
 
@@ -348,10 +390,32 @@
     background-image: url(svg/meny_pink_btn.svg);
     background-size: cover;
     left: 69vw;
-    top: 43vw;
+    top: 38vw;
 
     cursor: pointer;
 
+}
+
+#game_over_points_text {
+    position: absolute;
+    top: 19vw;
+    left: 71.5vw;
+    font-size: 5vw;
+    font-family: sans-serif;
+    color: white;
+    text-shadow: -2px -2px black;
+    font-weight: bold;
+}
+
+#game_over_points_text2 {
+    position: absolute;
+    top: 27.3vw;
+    left: 64.6vw;
+    font-size: 3.8vw;
+    font-family: sans-serif;
+    color: white;
+    text-shadow: -2px -2px black;
+    font-weight: bold;
 }
 
 /******************   animations  ************************/
@@ -382,19 +446,6 @@
     }
 }
 
-.click_good {
-    animation-name: click_good_kf;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-
-}
-
-@keyframes click_good_kf {
-    0% {
-        transform: rotateY(360deg);
-    }
-}
 
 .click_bad {
     animation-name: click_bad_kf;
