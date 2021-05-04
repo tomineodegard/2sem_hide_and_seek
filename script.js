@@ -29,9 +29,23 @@ function showPage() {
 
 
     document.querySelector("#play_btn").addEventListener("click", startGame);
+    document.querySelector("#settings_btn").addEventListener("click", gameSettings);
     document.querySelector("#level_completescreen").classList.add("hidden");
     document.querySelector("#game_over_points_screen").classList.add("hidden");
     document.querySelector("#game_over_lives_screen").classList.add("hidden");
+}
+
+function gameSettings() {
+    console.log("gameSettings");
+    //Hides all unnecesacry screens
+    document.querySelector("#startscreen").classList.add("hidden");
+    document.querySelector("#level_completescreen").classList.add("hidden");
+    document.querySelector("#game_over_points_screen").classList.add("hidden");
+    document.querySelector("#game_over_lives_screen").classList.add("hidden");
+
+
+    document.querySelector("#back_btn").addEventListener("click", showPage);
+
 }
 
 

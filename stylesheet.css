@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 #screen {
     position: relative;
     width: 100vw;
@@ -13,6 +18,8 @@
     left: 0;
     background-image: url(svg/titelskaerm.svg);
     background-size: cover;
+    z-index: 100;
+
 
 }
 
@@ -24,6 +31,7 @@
     left: 0;
     background-image: url(svg/game_over2.svg);
     background-size: cover;
+    z-index: 100;
 
 }
 
@@ -35,6 +43,7 @@
     left: 0;
     background-image: url(svg/game_over.svg);
     background-size: cover;
+    z-index: 100;
 
 }
 
@@ -47,6 +56,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 100;
 
 }
 
@@ -69,6 +79,19 @@
     left: 0;
     background-size: cover;
     pointer-events: none;
+    z-index: 90;
+}
+
+#game_middleground2 {
+    background-image: url(svg/mellomgrund2.svg);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    pointer-events: none;
+    z-index: 91;
 
 
 }
@@ -82,6 +105,7 @@
     left: 0;
     background-size: cover;
     pointer-events: none;
+    z-index: 98;
 
 }
 
@@ -115,8 +139,8 @@
 #figur2_sprite {
     background-image: url(svg/figur_2.svg);
     background-size: cover;
-    height: 11vw;
-    width: 7vw;
+    height: 11.8vw;
+    width: 7.5vw;
 }
 
 #figur3_container {
@@ -160,53 +184,69 @@
 
 
 .pos1 {
-    top: 14vw;
-    left: 33vw;
+    top: 7vw;
+    left: 49vw;
+    animation-name: jump_small_kf;
 }
 
 .pos2 {
-    top: 13vw;
-    left: 50vw;
+    top: 17vw;
+    left: 10vw;
+    animation-name: jump_small_kf;
 }
 
 .pos3 {
-    top: 25vw;
-    left: 87vw;
+    top: 26vw;
+    left: 26vw;
+    animation-name: jump_mid_kf;
+    z-index: 91;
 }
 
 .pos4 {
     top: 45vw;
     left: 10vw;
+    animation-name: jump_big_kf;
+    z-index: 97;
 }
 
 .pos5 {
-    top: 60vw;
-    left: 5vw;
+    top: 42vw;
+    left: 10vw;
+    animation-name: jump_big_kf;
+    z-index: 97;
 }
 
 .pos6 {
-    top: 50vw;
-    left: 60vw;
+    top: 38vw;
+    left: 82vw;
+    animation-name: jump_big_kf;
+    z-index: 91;
 }
 
 .pos7 {
-    top: 10vw;
-    left: 40vw;
+    top: 20vw;
+    left: 35vw;
+    z-index: 2;
+    animation-name: jump_small_kf;
 }
 
 .pos8 {
-    top: 58vw;
-    left: 28vw;
+    top: 30vw;
+    left: 37vw;
+    animation-name: jump_big_kf;
+    z-index: 91;
 }
 
 .pos9 {
-    top: 30vw;
-    right: 10vw;
+    top: 24vw;
+    right: 6vw;
+    animation-name: jump_mid_kf;
 }
 
 .pos10 {
-    top: 3vw;
-    left: 80vw;
+    top: 10.5vw;
+    left: 72vw;
+    animation-name: jump_small_kf;
 }
 
 
@@ -263,6 +303,7 @@
     position: absolute;
     bottom: 0.2vw;
     right: 4.5vw;
+    z-index: 99;
 }
 
 #time_star_sprite {
@@ -312,7 +353,7 @@
 #score_board {
     position: absolute;
     background-size: cover;
-    font-size: 8rem;
+    font-size: 4vw;
     font-family: sans-serif;
     color: white;
     text-shadow: -2px -2px black;
@@ -329,6 +370,9 @@
     position: absolute;
     height: 9.5vw;
     width: 9vw;
+    line-height: 11vw;
+    text-align: center;
+
 }
 
 
@@ -343,6 +387,18 @@
 
     cursor: pointer;
 
+}
+
+#settings_btn {
+    position: absolute;
+    width: 7vw;
+    height: 7vw;
+    background-image: url(svg/settings.svg);
+    background-size: cover;
+    left: 72vw;
+    top: 47vw;
+
+    cursor: pointer;
 }
 
 #try_again_pink_btn1 {
@@ -475,29 +531,103 @@
 
 
 .jump {
-    animation-name: jump_kf;
-    animation-duration: 2s;
+    animation-duration: 2.5s;
     animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-direction: alternate;
-
 }
 
-@keyframes jump_kf {
+
+@keyframes jump_big_kf {
     0% {
         transform: translateY(0);
     }
 
-    50% {
-        transform: translateY(-10vw);
+    10% {
+        transform: translateY(0);
+    }
 
+    45% {
+        transform: translateY(-11.5vw);
+    }
+
+    50% {
+        transform: translateY(-11.5vw);
+    }
+
+    55% {
+        transform: translateY(-11.5vw);
+    }
+
+    90% {
+        transform: translateY(0);
     }
 
     100% {
-        transform: translateY(5vw) scale(0.5);
-
+        transform: translateY(0);
     }
 }
+
+@keyframes jump_mid_kf {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+
+    10% {
+        transform: translateY(0) scale(1);
+    }
+
+    45% {
+        transform: translateY(-8.5vw) scale(1.2);
+    }
+
+    50% {
+        transform: translateY(-8.5vw) scale(1.5);
+    }
+
+    55% {
+        transform: translateY(-8.5vw) scale(1.5);
+    }
+
+    90% {
+        transform: translateY(0) scale(1.2);
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes jump_small_kf {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+
+    10% {
+        transform: translateY(0) scale(1);
+    }
+
+    45% {
+        transform: translateY(-5.5vw) scale(0.8);
+    }
+
+    50% {
+        transform: translateY(-5.5vw) scale(0.8);
+    }
+
+    55% {
+        transform: translateY(-5.5vw) scale(0.8);
+    }
+
+    90% {
+        transform: translateY(0) scale(0.6);
+    }
+
+    100% {
+        transform: translateY(0) scale(0.6);
+    }
+}
+
+
+
 
 
 .click_bad {
