@@ -2,6 +2,8 @@ let myRand;
 let points;
 let life;
 let speed;
+let posArray = ["pos1", "pos2", "pos3", "pos4", "pos5", "pos6", "pos7", "pos8", "pos9", "pos10"];
+
 
 const timer = document.querySelector("#time_star_container");
 
@@ -19,12 +21,12 @@ const gameOverPointsText = document.querySelector("#game_over_points_text");
 const gameOverPointsText2 = document.querySelector("#game_over_points_text2");
 
 
-
-
 window.addEventListener("load", showPage);
+
 
 function showPage() {
     console.log("showPage");
+
 
     document.querySelector("#play_btn").addEventListener("click", startGame);
     document.querySelector("#level_completescreen").classList.add("hidden");
@@ -36,20 +38,21 @@ function showPage() {
 function startGame() {
     console.log("startGame");
 
-
-
-    //Hide startscreen
+    //Hides all unnecesacry screens
     document.querySelector("#startscreen").classList.add("hidden");
     document.querySelector("#level_completescreen").classList.add("hidden");
     document.querySelector("#game_over_points_screen").classList.add("hidden");
     document.querySelector("#game_over_lives_screen").classList.add("hidden");
 
-    //Starter animationen
+
+    posArray = ["pos1", "pos2", "pos3", "pos4", "pos5", "pos6", "pos7", "pos8", "pos9", "pos10"];
+
+    //Start time animation
     timer.classList.add("time");
 
     //Reset points to 0
     points = 0;
-    document.querySelector("#score_board").innerHTML = points;
+    document.querySelector("#score_board_star_container").innerHTML = points;
 
     //Reset points to 3
     life = 3;
@@ -57,55 +60,45 @@ function startGame() {
     heart2.classList.remove("hidden");
     heart3.classList.remove("hidden");
 
-    //reset speed
+    //Reset speed
     speed = 1;
 
     //Start timer
-
     timer.firstElementChild.classList.add("time");
     timer.addEventListener("animationend", stopGame);
 
 
 
-    // Gives a random position with a random delay to a container
-    myRand = Math.floor(Math.random() * 5) + 1;
-    figur1.classList.add("pos" + myRand)
+    shuffle(posArray);
+    console.log("Full array " + posArray);
+
+    //sætter den første position fra det netop blandede posArray på samt jump; shift() fjerner den indsatte position fra arrayet, efter den er brugt
+
+    figur1.classList.add(posArray.shift(), "jump");
     myRand = Math.floor(Math.random() * 4) + 1;
     figur1.classList.add("delay" + myRand)
     figur1.classList.add("speed" + speed);
 
-    myRand = Math.floor(Math.random() * 5) + 1;
-    figur2.classList.add("pos" + myRand);
+
+    figur2.classList.add(posArray.shift(), "jump");
     myRand = Math.floor(Math.random() * 4) + 1;
     figur2.classList.add("delay" + myRand)
     figur2.classList.add("speed" + speed);
 
-    myRand = Math.floor(Math.random() * 5) + 1;
-    figur3.classList.add("pos" + myRand);
+    figur3.classList.add(posArray.shift(), "jump");
     myRand = Math.floor(Math.random() * 4) + 1;
     figur3.classList.add("delay" + myRand)
     figur3.classList.add("speed" + speed);
 
-    myRand = Math.floor(Math.random() * 5) + 1;
-    figur4.classList.add("pos" + myRand);
+    figur4.classList.add(posArray.shift(), "jump");
     myRand = Math.floor(Math.random() * 4) + 1;
     figur4.classList.add("delay" + myRand)
     figur4.classList.add("speed" + speed);
 
-    myRand = Math.floor(Math.random() * 5) + 1;
-    figur5.classList.add("pos" + myRand);
+    figur5.classList.add(posArray.shift(), "jump");
     myRand = Math.floor(Math.random() * 4) + 1;
     figur5.classList.add("delay" + myRand)
     figur5.classList.add("speed" + speed);
-
-
-
-    //Start jump animation on all elements
-    figur1.classList.add("jump");
-    figur2.classList.add("jump");
-    figur3.classList.add("jump");
-    figur4.classList.add("jump");
-    figur5.classList.add("jump");
 
 
     //Listen for jump animation to be done
@@ -132,7 +125,7 @@ function startGame() {
 
 
 
-/**************************** BAD - GREEN GIRL *************************************/
+/************ BAD - GREEN POWERPUFF **************/
 function clickFigurBadHandler() {
     console.log("clickFigurBadHandler");
     // removes the mousedown - not able to click several times
@@ -164,35 +157,41 @@ function clickFigurBadHandler() {
 
 function figur1Reset() {
     console.log("figur1Reset");
+    this.removeEventListener("animationend", figur1Reset);
+
+    //Laver classList om til en string (bogstaver)
+    let test = String(this.classList);
+
+    //Gemmer den class der har pos og et tal efter f.eks. pos8 og laver det om til en string
+    let matches = String(test.match(/pos\d+/));
+    //Sætter den positioner der var på elemetet tilbage i arrayet
+    posArray.push(matches);
+
+
+
     // set the classes back to 0
     this.classList = "";
-    console.log(this);
     this.firstElementChild.classList = "";
-    this.removeEventListener("animationend", figur1Reset);
 
     //For at kunne genstarte op_ned animationen, da vi fjener og tilføjer den i samme function
     this.offsetHeight;
 
 
-
     // adds a new random position to the game element
-    myRand = Math.floor(Math.random() * 5) + 1;
-    console.log("position for figur1 is now " + myRand);
-    this.classList.add("pos" + myRand);
+    this.classList.add(posArray.shift(), "jump");
 
-    myRand = Math.floor(Math.random() * 4) + 1;
+    // myRand = Math.floor(Math.random() * 4) + 1;
     this.classList.add("delay" + myRand);
     this.classList.add("speed" + speed);
 
 
     // animation jump begins
-    this.classList.add("jump");
     this.addEventListener("mousedown", clickFigurBadHandler);
 }
 
 
 
-/**************************** GOOD - PURPLE GIRL *************************************/
+/******** GOOD - PURPLE POWERPUFF *************/
 function clickFigurGoodHandler() {
     console.log("clickFigurGoodHandler");
     this.removeEventListener("mousedown", clickFigurGoodHandler);
@@ -203,7 +202,7 @@ function clickFigurGoodHandler() {
 
 
     points += 1;
-    document.querySelector("#score_board").innerHTML = points;
+    document.querySelector("#score_board_star_container").innerHTML = points;
 
 
     if (life <= 0) {
@@ -217,25 +216,26 @@ function clickFigurGoodHandler() {
 
 function figur4Reset() {
     console.log("figur4Reset");
+
+    //Laver classList om til en string (bogstaver)
+    let test = String(this.classList);
+
+    //Gemmer den class der har pos og et tal efter f.eks. pos8 og laver det om til en string
+    let matches = String(test.match(/pos\d+/));
+    //Sætter den positioner der var på elemetet tilbage i arrayet
+    posArray.push(matches);
+
     this.classList = "";
-    console.log(this);
     this.firstElementChild.classList = "";
     this.removeEventListener("animationend", figur4Reset);
 
     this.offsetHeight;
 
-
-    myRand = Math.floor(Math.random() * 5) + 1;
-    console.log("position for figur4 is now " + myRand);
-    this.classList.add("pos" + myRand);
-
-    myRand = Math.floor(Math.random() * 4) + 1;
+    this.classList.add(posArray.shift(), "jump");
+    console.log(posArray);
     this.classList.add("delay" + myRand);
     this.classList.add("speed" + speed);
 
-
-
-    this.classList.add("jump");
     this.addEventListener("mousedown", clickFigurGoodHandler);
 }
 
@@ -302,20 +302,19 @@ function gameOverPoints() {
     gameOverPointsText2.textContent = "10";
 
 
-    document.querySelector("#try_again_pink_btn").addEventListener("click", startGame);
-    document.querySelector("#meny_blue_btn").addEventListener("click", showPage);
+    document.querySelector("#try_again_pink_btn1").addEventListener("click", startGame);
+    document.querySelector("#meny_blue_btn1").addEventListener("click", showPage);
     document.querySelector("#startscreen").classList.remove("hidden");
 
 }
 
-// TODO: Ask for help here! Do I need another if/else? How?
 
 function gameOverLives() {
     console.log("gameOverLives");
     document.querySelector("#game_over_lives_screen").classList.remove("hidden");
 
-    document.querySelector("#try_again_pink_btn").addEventListener("click", startGame);
-    document.querySelector("#meny_blue_btn").addEventListener("click", showPage);
+    document.querySelector("#try_again_pink_btn2").addEventListener("click", startGame);
+    document.querySelector("#meny_blue_btn2").addEventListener("click", showPage);
     document.querySelector("#startscreen").classList.remove("hidden");
 
 }
@@ -329,4 +328,13 @@ function levelComplete() {
     document.querySelector("#next_level_btn").addEventListener("click", startGame);
     document.querySelector("#meny_pink_btn").addEventListener("click", showPage);
     document.querySelector("#startscreen").classList.remove("hidden");
+}
+
+
+function shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
 }

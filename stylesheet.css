@@ -184,6 +184,31 @@
     left: 5vw;
 }
 
+.pos6 {
+    top: 50vw;
+    left: 60vw;
+}
+
+.pos7 {
+    top: 10vw;
+    left: 40vw;
+}
+
+.pos8 {
+    top: 58vw;
+    left: 28vw;
+}
+
+.pos9 {
+    top: 30vw;
+    right: 10vw;
+}
+
+.pos10 {
+    top: 3vw;
+    left: 80vw;
+}
+
 
 
 /******************   delays  ************************/
@@ -201,7 +226,7 @@
 }
 
 .delay4 {
-    animation-delay: 1.5s;
+    animation-delay: 1.2s;
 }
 
 
@@ -285,23 +310,25 @@
 
 
 #score_board {
+    position: absolute;
+    background-size: cover;
     font-size: 8rem;
     font-family: sans-serif;
     color: white;
     text-shadow: -2px -2px black;
     top: 4.5vw;
     right: 7vw;
-    position: absolute;
 }
 
 
-#score_board_star_container img {
-    top: 10vw;
-    right: 5vw;
+#score_board_star_container {
+    background-image: url(svg/stjerne_gul_full.svg);
+    top: -3.5vw;
+    right: -2.5vw;
     background-size: cover;
     position: absolute;
-    height: 5.5vw;
-    width: 6.6vw;
+    height: 9.5vw;
+    width: 9vw;
 }
 
 
@@ -318,7 +345,7 @@
 
 }
 
-#try_again_pink_btn {
+#try_again_pink_btn1 {
     position: absolute;
     width: 19.9vw;
     height: 6.5vw;
@@ -331,7 +358,33 @@
 
 }
 
-#meny_blue_btn {
+#meny_blue_btn1 {
+    position: absolute;
+    width: 19.9vw;
+    height: 6.5vw;
+    background-image: url(svg/meny_blue_btn.svg);
+    background-size: cover;
+    left: 72vw;
+    top: 46vw;
+
+    cursor: pointer;
+
+}
+
+#try_again_pink_btn2 {
+    position: absolute;
+    width: 19.9vw;
+    height: 6.5vw;
+    background-image: url(svg/try_again_btn.svg);
+    background-size: cover;
+    left: 72vw;
+    top: 38vw;
+
+    cursor: pointer;
+
+}
+
+#meny_blue_btn2 {
     position: absolute;
     width: 19.9vw;
     height: 6.5vw;
