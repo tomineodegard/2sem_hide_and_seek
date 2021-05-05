@@ -20,6 +20,8 @@ const heart3 = document.querySelector("#heart3");
 const gameOverPointsText = document.querySelector("#game_over_points_text");
 const gameOverPointsText2 = document.querySelector("#game_over_points_text2");
 
+const music = document.querySelector("#backroundmusic");
+
 
 window.addEventListener("load", showPage);
 
@@ -49,8 +51,15 @@ function gameSettings() {
 }
 
 
+
+
 function startGame() {
     console.log("startGame");
+
+
+    console.log("playMusic")
+    music.currentTime = 0;
+    music.play();
 
     //Hides all unnecesacry screens
     document.querySelector("#startscreen").classList.add("hidden");
@@ -309,6 +318,8 @@ function stopGame() {
 
 function gameOverPoints() {
     console.log("gameOverPoints");
+    music.pause();
+    music.currentTime = 0;
     document.querySelector("#game_over_points_screen").classList.remove("hidden");
 
 
