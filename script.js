@@ -48,7 +48,7 @@ function popupScreen() {
     console.log("playMusic")
     music.currentTime = 0;
     music.play();
-    music.volume = 0.8;
+    music.volume = 0.2;
 
 
     document.querySelector("#startscreen").classList.add("hidden");
