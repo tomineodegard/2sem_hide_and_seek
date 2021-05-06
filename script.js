@@ -35,6 +35,7 @@ function showPage() {
     document.querySelector("#level_completescreen").classList.add("hidden");
     document.querySelector("#game_over_points_screen").classList.add("hidden");
     document.querySelector("#game_over_lives_screen").classList.add("hidden");
+
 }
 
 
@@ -45,10 +46,6 @@ function popupScreen() {
     document.querySelector("#popup_screen").classList.remove("hidden");
 
     document.querySelector("#got_it_btn").addEventListener("click", startGame);
-    console.log("playMusic")
-    music.currentTime = 0;
-    music.play();
-    music.volume = 0.2;
 
 
     document.querySelector("#startscreen").classList.add("hidden");
@@ -61,7 +58,10 @@ function popupScreen() {
 function startGame() {
     console.log("startGame");
 
-
+    console.log("playMusic")
+    music.currentTime = 0;
+    music.play();
+    music.volume = 0.2;
 
     //Hides all unnecesacry screens
     document.querySelector("#popup_screen").classList.add("hidden");

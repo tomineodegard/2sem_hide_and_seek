@@ -21,8 +21,10 @@ nav {
 header {
     position: sticky;
     top: 0;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5vw 1.5vw;
     background-color: #85B4E8;
+    display: flex;
+    justify-content: space-between;
 }
 
 
@@ -141,7 +143,7 @@ hr {
 /*Forside links*/
 .index .col_link a {
     font-family: 'Rubik', sans-serif;
-    font-size: 3vw;
+    font-size: 1.5vw;
     color: rgb(126, 49, 90);
 }
 
@@ -164,52 +166,6 @@ hr {
 .idea div {
     margin-bottom: 1vw;
 }
-
-/**********************************ASSETLISTE**********************************************/
-/*
-.asset {
-    display: grid;
-    grid-template-columns: 1fr minmax(0, 1000px) 1fr;
-}
-
-.asset section {
-    grid-column: 2/3;
-    margin-bottom: 2vw;
-}
-
-.asset div {
-    margin-bottom: 1vw;
-}
-*/
-
-/*Media: Menubar*/
-@media (min-width:620px) {
-    header {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .menu {
-        gap: 5vw;
-        margin-left: 10vw;
-    }
-
-    .logo img {
-        display: inline;
-        width: 11.5vw;
-        height: 7.2vw;
-    }
-
-    .menu a:hover {
-        border-top: 1px solid #F2AB6B;
-        border-bottom: 1px solid #F2AB6B;
-        transition: 0.3s ease;
-        padding: 0.8vw;
-    }
-}
-
-
-
 
 
 
@@ -290,6 +246,13 @@ hr {
 
 /******************** img's *******************/
 
+#second_section img {
+    display: block;
+    width: 9vw;
+    height: auto;
+    object-fit: cover;
+}
+
 #skitser img {
     display: block;
     width: 50vw;
@@ -329,7 +292,7 @@ footer p {
     font-family: 'Rubik', sans-serif;
     text-decoration: none;
     font-weight: 700;
-    padding-top: 1rem;
-    padding-bottom: 0.5rem;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
 
 }
