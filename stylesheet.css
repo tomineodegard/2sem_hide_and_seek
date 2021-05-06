@@ -19,8 +19,17 @@ body {
     background-image: url(svg/titelskaerm.svg);
     background-size: cover;
     z-index: 100;
+}
 
-
+#popup_screen {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(svg/popup_skaerm.svg);
+    background-size: cover;
+    z-index: 100;
 }
 
 #game_over_points_screen {
@@ -131,6 +140,21 @@ body {
     width: 7vw;
 }
 
+
+#figur1_red_container {
+    position: absolute;
+}
+
+
+#figur1_red_sprite {
+    background-image: url(svg/figur_1_red.svg);
+    background-size: cover;
+    height: 9vw;
+    width: 7vw;
+}
+
+
+
 #figur2_container {
     position: absolute;
 }
@@ -210,8 +234,8 @@ body {
 }
 
 .pos5 {
-    top: 42vw;
-    left: 10vw;
+    top: 50vw;
+    left: 22vw;
     animation-name: jump_big_kf;
     z-index: 97;
 }
@@ -219,7 +243,7 @@ body {
 .pos6 {
     top: 38vw;
     left: 82vw;
-    animation-name: jump_big_kf;
+    animation-name: jump_mid_kf;
     z-index: 91;
 }
 
@@ -262,11 +286,11 @@ body {
 }
 
 .delay3 {
-    animation-delay: 1s;
+    animation-delay: 0.7s;
 }
 
 .delay4 {
-    animation-delay: 1.2s;
+    animation-delay: 1s;
 }
 
 
@@ -316,7 +340,7 @@ body {
 
 .time {
     animation-name: time_kf;
-    animation-duration: 15s;
+    animation-duration: 20s;
     animation-timing-function: steps(11);
     animation-iteration-count: 1;
     animation-fill-mode: both;
@@ -386,20 +410,20 @@ body {
     top: 29vw;
 
     cursor: pointer;
-
 }
 
-#settings_btn {
+#got_it_btn {
     position: absolute;
-    width: 7vw;
-    height: 7vw;
-    background-image: url(svg/settings.svg);
+    width: 11.5vw;
+    height: 11vw;
+    background-image: url(svg/stjerne_rosa%20copy.svg);
     background-size: cover;
-    left: 72vw;
-    top: 47vw;
+    left: 65vw;
+    top: 34vw;
 
     cursor: pointer;
 }
+
 
 #try_again_pink_btn1 {
     position: absolute;
@@ -481,8 +505,8 @@ body {
 
 #next_level_btn {
     position: absolute;
-    width: 22.6vw;
-    height: 7.5vw;
+    width: 16.6vw;
+    height: 5.5vw;
     background-image: url(svg/next_level_btn.svg);
     background-size: cover;
     left: 69vw;
@@ -494,8 +518,8 @@ body {
 
 #meny_pink_btn {
     position: absolute;
-    width: 22.6vw;
-    height: 7.5vw;
+    width: 16.6vw;
+    height: 5.5vw;
     background-image: url(svg/meny_pink_btn.svg);
     background-size: cover;
     left: 69vw;
@@ -508,7 +532,7 @@ body {
 #game_over_points_text {
     position: absolute;
     top: 19vw;
-    left: 71.5vw;
+    left: 70vw;
     font-size: 5vw;
     font-family: sans-serif;
     color: white;
@@ -529,6 +553,53 @@ body {
 
 /******************   animations  ************************/
 
+.pulse_smaller {
+    animation-name: pulse_smaller_kf;
+    animation-duration: 1.8s;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes pulse_smaller_kf {
+    0% {
+        transform: scale(0.8);
+
+    }
+
+    50% {
+        transform: scale(1);
+
+    }
+
+    100% {
+        transform: scale(0.8);
+
+    }
+}
+
+.pulse_bigger {
+    animation-name: pulse_bigger_kf;
+    animation-duration: 1.8s;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes pulse_bigger_kf {
+    0% {
+        transform: scale(1);
+
+    }
+
+    50% {
+        transform: scale(1.1);
+
+    }
+
+    100% {
+        transform: scale(1);
+
+    }
+}
 
 .jump {
     animation-duration: 2.5s;
@@ -538,31 +609,31 @@ body {
 
 @keyframes jump_big_kf {
     0% {
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
 
     10% {
-        transform: translateY(0);
+        transform: translateY(0) scale(1.2);
     }
 
     45% {
-        transform: translateY(-11.5vw);
+        transform: translateY(-11.5vw) scale(1.4);
     }
 
     50% {
-        transform: translateY(-11.5vw);
+        transform: translateY(-11.5vw) scale(1.5);
     }
 
     55% {
-        transform: translateY(-11.5vw);
+        transform: translateY(-11.5vw) scale(1.4);
     }
 
     90% {
-        transform: translateY(0);
+        transform: translateY(0) scale(1.2);
     }
 
     100% {
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
 }
 
@@ -576,19 +647,19 @@ body {
     }
 
     45% {
-        transform: translateY(-8.5vw) scale(1.2);
+        transform: translateY(-8.5vw) scale(1.1);
     }
 
     50% {
-        transform: translateY(-8.5vw) scale(1.5);
+        transform: translateY(-8.5vw) scale(1.2);
     }
 
     55% {
-        transform: translateY(-8.5vw) scale(1.5);
+        transform: translateY(-8.5vw) scale(1.1);
     }
 
     90% {
-        transform: translateY(0) scale(1.2);
+        transform: translateY(0) scale(1.1);
     }
 
     100% {

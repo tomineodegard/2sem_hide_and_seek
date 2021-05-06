@@ -8,6 +8,7 @@ let posArray = ["pos1", "pos2", "pos3", "pos4", "pos5", "pos6", "pos7", "pos8", 
 const timer = document.querySelector("#time_star_container");
 
 const figur1 = document.querySelector("#figur1_container");
+const figur1_red = document.querySelector("#figur1_red_container");
 const figur2 = document.querySelector("#figur2_container");
 const figur3 = document.querySelector("#figur3_container");
 const figur4 = document.querySelector("#figur4_container");
@@ -28,40 +29,43 @@ window.addEventListener("load", showPage);
 
 function showPage() {
     console.log("showPage");
+    document.querySelector("#play_btn").addEventListener("click", popupScreen);
 
-
-    document.querySelector("#play_btn").addEventListener("click", startGame);
-    document.querySelector("#settings_btn").addEventListener("click", gameSettings);
+    document.querySelector("#popup_screen").classList.add("hidden");
     document.querySelector("#level_completescreen").classList.add("hidden");
     document.querySelector("#game_over_points_screen").classList.add("hidden");
     document.querySelector("#game_over_lives_screen").classList.add("hidden");
 }
 
-function gameSettings() {
-    console.log("gameSettings");
-    //Hides all unnecesacry screens
+
+
+
+
+function popupScreen() {
+    document.querySelector("#popup_screen").classList.remove("hidden");
+
+    document.querySelector("#got_it_btn").addEventListener("click", startGame);
+    console.log("playMusic")
+    music.currentTime = 0;
+    music.play();
+    music.volume = 0.8;
+
+
     document.querySelector("#startscreen").classList.add("hidden");
     document.querySelector("#level_completescreen").classList.add("hidden");
     document.querySelector("#game_over_points_screen").classList.add("hidden");
     document.querySelector("#game_over_lives_screen").classList.add("hidden");
-
-
-    document.querySelector("#back_btn").addEventListener("click", showPage);
-
 }
-
-
 
 
 function startGame() {
     console.log("startGame");
 
 
-    console.log("playMusic")
-    music.currentTime = 0;
-    music.play();
 
     //Hides all unnecesacry screens
+    document.querySelector("#popup_screen").classList.add("hidden");
+
     document.querySelector("#startscreen").classList.add("hidden");
     document.querySelector("#level_completescreen").classList.add("hidden");
     document.querySelector("#game_over_points_screen").classList.add("hidden");
@@ -102,6 +106,11 @@ function startGame() {
     figur1.classList.add("delay" + myRand)
     figur1.classList.add("speed" + speed);
 
+    figur1_red.classList.add(posArray.shift(), "jump");
+    myRand = Math.floor(Math.random() * 4) + 1;
+    figur1_red.classList.add("delay" + myRand)
+    figur1_red.classList.add("speed" + speed);
+
 
     figur2.classList.add(posArray.shift(), "jump");
     myRand = Math.floor(Math.random() * 4) + 1;
@@ -126,6 +135,7 @@ function startGame() {
 
     //Listen for jump animation to be done
     figur1.addEventListener("animationiteration", figur1Reset);
+    figur1_red.addEventListener("animationiteration", figur1Reset);
     figur2.addEventListener("animationiteration", figur4Reset);
     figur3.addEventListener("animationiteration", figur4Reset);
     figur4.addEventListener("animationiteration", figur4Reset);
@@ -134,6 +144,7 @@ function startGame() {
 
     //Listen for a mousedown-event
     figur1.addEventListener("mousedown", clickFigurBadHandler);
+    figur1_red.addEventListener("mousedown", clickFigurBadHandler);
     figur2.addEventListener("mousedown", clickFigurGoodHandler);
     figur3.addEventListener("mousedown", clickFigurGoodHandler);
     figur4.addEventListener("mousedown", clickFigurGoodHandler);
@@ -307,7 +318,7 @@ function stopGame() {
 
     if (life <= 0) {
         gameOverLives();
-    } else if (points >= 5) {
+    } else if (points >= 15) {
         levelComplete();
     } else {
         gameOverPoints();
@@ -324,7 +335,7 @@ function gameOverPoints() {
 
 
     gameOverPointsText.textContent = points;
-    gameOverPointsText2.textContent = "10";
+    gameOverPointsText2.textContent = "15";
 
 
     document.querySelector("#try_again_pink_btn1").addEventListener("click", startGame);
@@ -336,6 +347,8 @@ function gameOverPoints() {
 
 function gameOverLives() {
     console.log("gameOverLives");
+    music.pause();
+    music.currentTime = 0;
     document.querySelector("#game_over_lives_screen").classList.remove("hidden");
 
     document.querySelector("#try_again_pink_btn2").addEventListener("click", startGame);
@@ -348,6 +361,8 @@ function gameOverLives() {
 
 function levelComplete() {
     console.log("levelComplete");
+    music.pause();
+    music.currentTime = 0;
     document.querySelector("#level_completescreen").classList.remove("hidden");
 
     document.querySelector("#next_level_btn").addEventListener("click", startGame);
