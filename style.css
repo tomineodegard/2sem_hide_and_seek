@@ -1,117 +1,23 @@
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
 body {
     background-color: whitesmoke;
     overflow: none;
 }
 
-img {
 
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
 
 nav {
-    max-width: 1200px;
     margin: auto;
 }
 
-#index {
-    display: grid;
-}
 
-#skitser img {
-    display: block;
-    width: 50vw;
-    height: auto;
-    object-fit: cover;
-}
-
-#first_section {
-    width: 100vw;
-    height: 100vh;
-    background-image: url(svg/titelskaerm.svg);
-    background-size: cover;
-    margin: 0;
-}
-
-#game_description {
-    padding-left: 5vw;
-    padding-right: 5vw;
-}
-
-#process {
-    padding-left: 5vw;
-    padding-right: 5vw;
-}
-
-#ideas {
-    padding-left: 5vw;
-    padding-right: 5vw;
-}
-
-#assets {
-    padding-left: 5vw;
-    padding-right: 5vw;
-}
-
-
-
-h1 {
-    font-family: 'Rubik', sans-serif;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 3vw;
-    color: rgb(126, 49, 90);
-}
-
-
-h2 {
-    font-family: 'Rubik', sans-serif;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 2vw;
-    color: black;
-}
-
-p {
-    color: black;
-}
-
-#logo img {
-    height: 6vw;
-    width: auto;
-}
-
-
-
-
-#game_screens img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-
-.ui_stars img {
-    height: 6vw;
-    width: 65vw;
-}
-
-
-.figures img {
-    height: 6vw;
-    width: auto;
-}
-
-hr {
-
-    border: 0;
-    border-top: 1px solid black;
-}
-
-/******************   nav    ****************/
-
+/*Menubar, logo og links*/
 header {
     position: sticky;
     top: 0;
@@ -135,7 +41,7 @@ ul {
 
 
 li a {
-    display: block;
+
     text-align: center;
     padding: 14px 16px;
 
@@ -149,6 +55,273 @@ li a:hover {
     color: #FFA1D3;
 }
 
+
+#index {
+    display: grid;
+}
+
+
+
+.logo img {
+    display: inline;
+    width: 11.5vw;
+    height: 7.2vw;
+    height: auto;
+
+}
+
+.logo {
+    text-align: left;
+}
+
+.background_color {
+    background-color: whitesmoke;
+}
+
+/*Headings og tekst - mobilstørrelser */
+
+
+h2 {
+    font-family: 'Rubik', sans-serif;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 3vw;
+    color: rgb(126, 49, 90);
+}
+
+
+h3 {
+    font-family: 'Rubik', sans-serif;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 2vw;
+    color: black;
+}
+
+p {
+    color: black;
+    font-family: 'Rubik', sans-serif;
+}
+
+/*Linjer*/
+hr {
+    border: 0;
+    border-top: 1px solid black;
+}
+
+/**********************************INDEX (forside)*****************************************/
+/*HTML main grid*/
+.index {
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 1000px) 1fr;
+}
+
+.index section {
+    grid-column: 2/3;
+    margin-bottom: 2vw;
+}
+
+.index div {
+    margin-bottom: 1vw;
+}
+
+/*Splashbillede og titel*/
+.index #first_section {
+    grid-column: 1/4;
+
+    width: 100%;
+    height: 100vh;
+    background-image: url(svg/titelskaerm.svg);
+    background-size: cover;
+    background-position: 53% 0%;
+
+    display: grid;
+}
+
+/*Forside links*/
+.index .col_link a {
+    font-family: 'Rubik', sans-serif;
+    font-size: 3vw;
+    color: rgb(126, 49, 90);
+}
+
+.index .col_link a:hover {
+    color: pink;
+}
+
+/**********************************IDE*****************************************/
+/*Ide main grid*/
+.idea {
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 1000px) 1fr;
+}
+
+.idea section {
+    grid-column: 2/3;
+    margin-bottom: 2vw;
+}
+
+.idea div {
+    margin-bottom: 1vw;
+}
+
+/**********************************ASSETLISTE**********************************************/
+/*
+.asset {
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 1000px) 1fr;
+}
+
+.asset section {
+    grid-column: 2/3;
+    margin-bottom: 2vw;
+}
+
+.asset div {
+    margin-bottom: 1vw;
+}
+*/
+
+/*Media: Menubar*/
+@media (min-width:620px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .menu {
+        gap: 5vw;
+        margin-left: 10vw;
+    }
+
+    .logo img {
+        display: inline;
+        width: 11.5vw;
+        height: 7.2vw;
+    }
+
+    .menu a:hover {
+        border-top: 1px solid #F2AB6B;
+        border-bottom: 1px solid #F2AB6B;
+        transition: 0.3s ease;
+        padding: 0.8vw;
+    }
+}
+
+
+
+
+
+
+
+@media (max-width:700px) {
+
+
+    li a {
+        font-size: 2vw;
+    }
+
+
+}
+
+
+
+
+
+
+@media (min-width:1000px) {
+    .menu a {
+        font-family: 'Rubik', sans-serif;
+        font-size: 1vw;
+        text-decoration: none;
+        font-weight: 700;
+        color: #F28A22;
+    }
+
+    /*    Tekstørrelser web*/
+    h1 {
+        font-size: 10vw;
+    }
+
+    h2 {
+        font-size: 2vw;
+    }
+
+    h3 {
+        font-size: 1vw;
+    }
+
+    p {
+        font-size: 1vw;
+    }
+
+    .index .col_link a {
+        font-size: 1vw;
+    }
+
+    /*    Grid index.html*/
+    #second_section .section_wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1vw;
+    }
+
+    #third_section .section_wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1vw;
+    }
+
+    #fourth_section .section_wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1vw;
+    }
+
+    #fifth_section .section_wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1vw;
+    }
+}
+
+
+
+
+/******************** img's *******************/
+
+#skitser img {
+    display: block;
+    width: 50vw;
+    height: auto;
+    object-fit: cover;
+}
+
+
+#aktivitetsdiagram img {
+    display: block;
+    width: 50vw;
+    height: auto;
+    object-fit: cover;
+}
+
+#game_screens img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+.ui_stars img {
+    height: 6vw;
+    width: 65vw;
+}
+
+
+.figures img {
+    height: 6vw;
+    width: auto;
+}
 
 footer p {
     text-align: center;

@@ -4,16 +4,26 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Hide and seek</title>
+    <title>Hide and seek website</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
-<body>
+<body class="background_color">
     <header>
-
+        <div class="logo">
+            <img src="svg/logo_stjerne.svg" alt="Ikon">
+        </div>
         <nav>
             <ul>
-
                 <li><a href="home.html">Home</a></li>
                 <li><a href="assets.html">Assetlist</a></li>
                 <li><a href="idea.html">Ideas and inspiriation</a></li>
@@ -22,57 +32,72 @@
             </ul>
         </nav>
     </header>
-
-    <main id="index">
+    <main class=index>
         <section id="first_section">
-
         </section>
-
-        <section id="game_description">
-            <div class="game_description_wrapper">
-
-                <h1>The game</h1>
-                <p>
-                    Finally, someone who got the time to play hide and seek with the girls! They are all inn the backyard, but remember - the angry twins are not your friends!
-                </p>
-                <a href="http://tomineodegard.com/kea/04_animation/spil/index.html/">Play here!</a>
+        <section id="second_section">
+            <h2>The game</h2>
+            <div class="section_wrapper">
+                <div class="col_txt">
+                    <p>
+                        <b>Finally</b>, you are here! The girls are in the backyard, and they have been dying to play hide and seek with someone. I am so glad you stopped by! <br> <br>Can you find them all? Oh, and remember - the angry twins are not your friends!
+                    </p>
+                    <div class="col_link">
+                        <nav> <a href="index.html">PLAY NOW</a></nav>
+                    </div>
+                </div>
+                <div class="col_img">
+                    <img src="svg/titelskaerm.svg" alt="Startscreen">
+                </div>
             </div>
         </section>
-
-        <section id="assets">
-            <div class="assets_wrapper">
-                <h1>My assetlist</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, voluptatibus!
-                </p>
-                <a href="http://tomineodegard.com/kea/04_animation/spil/assets.html">Read more</a>
+        <section id="third_section">
+            <hr>
+            <h2>Idea</h2>
+            <div class="section_wrapper">
+                <div class="col_img">
+                    <img src="svg/game_over.svg" alt="Spilskærmen">
+                </div>
+                <div class="col_txt">
+                    <p>Text about game-idea.</p>
+                    <div class="col_link">
+                        <nav> <a href="idea.html">Read more</a></nav>
+                    </div>
+                </div>
             </div>
         </section>
-
-
-        <section id="ideas">
-            <div class="ideas_wrapper">
-
-                <h1>Ideas and inspiration</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, voluptatibus!
-                </p>
-                <a href="http://tomineodegard.com/kea/04_animation/spil/idea.html/">Read more</a>
+        <section id="fourth_section">
+            <hr>
+            <h2>Assetlist</h2>
+            <div class="section_wrapper">
+                <div class="col_txt">
+                    <p>Assetlist text.</p>
+                    <div class="col_link">
+                        <nav> <a href="assets.html">Read more</a></nav>
+                    </div>
+                </div>
+                <div class="col_img">
+                    <img src="dokumentation/from_game.png" alt="From game">
+                </div>
             </div>
         </section>
-
-        <section id="process">
-            <div class="process_wrapper">
-                <h1>Process</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, voluptatibus!
-                </p>
-                <a href="http://tomineodegard.com/kea/04_animation/spil/process.html">Read more</a>
+        <section id="fifth_section">
+            <hr>
+            <h2>Documentation</h2>
+            <div class="section_wrapper">
+                <div class="col_txt">
+                    <p>Documentation, process things here.</p>
+                    <div class="col_link">
+                        <nav><a href="process.html">Read more</a></nav>
+                    </div>
+                </div>
+                <div class="col_img">
+                    <img src="dokumentation/State%20Machine%20Diagram.png" alt="State Machine Diagram">
+                </div>
             </div>
+            <hr>
         </section>
-
     </main>
-
     <footer>
         <p>Made by Tomine Ødegård</p>
     </footer>
