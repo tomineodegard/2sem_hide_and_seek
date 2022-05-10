@@ -92,8 +92,9 @@ h2 {
     font-family: 'Rubik', sans-serif;
     text-decoration: none;
     font-weight: 700;
-    font-size: 3vw;
+    font-size: 4.5vw;
     color: rgb(126, 49, 90);
+    padding-top: 50px;
 }
 
 
@@ -114,6 +115,46 @@ p {
 hr {
     border: 0;
     border-top: 1px solid black;
+}
+
+
+.figures {
+    display: inline-flex;
+}
+
+.btn_shapes {
+    display: flex;
+    gap: 1vw;
+
+}
+
+.play_btn img {
+    height: 6.5vw;
+    width: 6vw;
+}
+
+.star_btns {
+    height: 6.5vw;
+    width: 6vw;
+}
+
+.btns {
+    width: 12vw;
+    height: 4vw;
+    display: flex;
+    gap: 1vw;
+}
+
+
+.index_wrapper {
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+.inspiration {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2vw;
 }
 
 /**********************************INDEX (forside)*****************************************/
@@ -140,7 +181,7 @@ hr {
     height: 100vh;
     background-image: url(svg/titelskaerm.svg);
     background-size: cover;
-    background-position: 53% 0%;
+    background-position: 8% 0%;
 
     display: grid;
 }
@@ -282,7 +323,7 @@ hr {
 
 .ui_stars img {
     height: 6vw;
-    width: 65vw;
+    width: 71vw;
 }
 
 
